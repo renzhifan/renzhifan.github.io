@@ -70,19 +70,22 @@ sudo vi /etc/nginx/sites-available/default
 
 >使用 vi 编辑器打开 /etc/nginx/sites-available/default，可以直接删除里面的所有内容，然后再添加下面的配置：
 
-```nginx
+```shell
+
 server {
     listen 80;
     listen [::]:80;
     server_name your-domain.com www.your-domain.com;
 }
 
+```
+
 ```shell
 
 ***注意这里的 your-domain.com 换成你自己的域名。***
 
 >保存退出之后，执行以下命令来检测 Nginx 的配置文件是否有错：
-
+```
 
 ```shell
 sudo nginx -t

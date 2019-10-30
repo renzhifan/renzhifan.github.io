@@ -176,21 +176,22 @@
   <p>使用 vi 编辑器打开 /etc/nginx/sites-available/default，可以直接删除里面的所有内容，然后再添加下面的配置：</p>
 </blockquote>
 
-<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">server</span> <span class="p">{</span>
-    <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
-    <span class="kn">listen</span> <span class="s">[::]:80</span><span class="p">;</span>
-    <span class="kn">server_name</span> <span class="s">your-domain.com</span> <span class="s">www.your-domain.com</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+server <span class="o">{</span>
+    listen 80<span class="p">;</span>
+    listen <span class="o">[</span>::]:80<span class="p">;</span>
+    server_name your-domain.com www.your-domain.com<span class="p">;</span>
+<span class="o">}</span>
 
-<span class="k">```shell</span>
+</code></pre></div></div>
 
-<span class="s">***注意这里的</span> <span class="s">your-domain.com</span> <span class="s">换成你自己的域名。***</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">***</span>注意这里的 your-domain.com 换成你自己的域名。<span class="k">***</span>
 
-<span class="s">&gt;保存退出之后，执行以下命令来检测</span> <span class="s">Nginx</span> <span class="s">的配置文件是否有错：</span>
+<span class="o">&gt;</span>保存退出之后，执行以下命令来检测 Nginx 的配置文件是否有错：
+</code></pre></div></div>
 
-
-<span class="s">```shell</span>
-<span class="s">sudo</span> <span class="s">nginx</span> <span class="s">-t</span>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nginx <span class="nt">-t</span>
 
 </code></pre></div></div>
 

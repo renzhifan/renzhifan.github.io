@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Oct 2019 09:26:31 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Oct 2019 09:26:31 +0800</lastBuildDate>
+    <pubDate>Wed, 30 Oct 2019 14:15:04 +0800</pubDate>
+    <lastBuildDate>Wed, 30 Oct 2019 14:15:04 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -603,21 +603,22 @@ ps &lt;span class=&quot;nt&quot;&gt;-ef&lt;/span&gt;|grep mysqld
   &lt;p&gt;使用 vi 编辑器打开 /etc/nginx/sites-available/default，可以直接删除里面的所有内容，然后再添加下面的配置：&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;[::]:80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your-domain.com&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;www.your-domain.com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+server &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    listen 80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    listen &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;::]:80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    server_name your-domain.com www.your-domain.com&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;k&quot;&gt;```shell&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;span class=&quot;s&quot;&gt;***注意这里的&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;your-domain.com&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;换成你自己的域名。***&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;注意这里的 your-domain.com 换成你自己的域名。&lt;span class=&quot;k&quot;&gt;***&lt;/span&gt;
 
-&lt;span class=&quot;s&quot;&gt;&amp;gt;保存退出之后，执行以下命令来检测&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Nginx&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;的配置文件是否有错：&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;保存退出之后，执行以下命令来检测 Nginx 的配置文件是否有错：
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-
-&lt;span class=&quot;s&quot;&gt;```shell&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;nginx&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;-t&lt;/span&gt;
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;nginx &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt;
 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
