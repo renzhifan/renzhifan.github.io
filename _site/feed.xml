@@ -5,9 +5,60 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Oct 2019 14:15:04 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Oct 2019 14:15:04 +0800</lastBuildDate>
+    <pubDate>Fri, 29 Nov 2019 14:05:36 +0800</pubDate>
+    <lastBuildDate>Fri, 29 Nov 2019 14:05:36 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Jekyll常用操作</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#安装jekyll&quot; id=&quot;markdown-toc-安装jekyll&quot;&gt;安装jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#启动本地服务&quot; id=&quot;markdown-toc-启动本地服务&quot;&gt;启动本地服务&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#生成静态页面&quot; id=&quot;markdown-toc-生成静态页面&quot;&gt;生成静态页面&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;使用jekyll编译github的gh-pages生成静态页面&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h3 id=&quot;安装jekyll&quot;&gt;安装jekyll&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
+
+gem install jekyll
+
+gem install bundler
+
+gem install jekyll-paginate
+
+gem install jekyll-gist
+gem install bundler
+bundler install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;启动本地服务&quot;&gt;启动本地服务&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;hr /&gt;
+&lt;h3 id=&quot;生成静态页面&quot;&gt;生成静态页面&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; bundle exec jekyll build
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 29 Nov 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/jekyll/Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</guid>
+        
+        <category>Jekyll</category>
+        
+        
+        <category>Jekyll</category>
+        
+      </item>
     
       <item>
         <title>laravel集成微信第三方登录</title>
