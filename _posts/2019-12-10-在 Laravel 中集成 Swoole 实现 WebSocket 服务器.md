@@ -58,7 +58,7 @@ class WebSocketService implements WebSocketHandlerInterface
 ```
 ---
 ## 2. 更改配置config/laravels.php
-```
+```php
 // ...
 'websocket'      => [
     'enable'  => true, // 看清楚，这里是true
@@ -74,7 +74,7 @@ class WebSocketService implements WebSocketHandlerInterface
 ```
 ---
 ## 3. 配置 Nginx 支持 WebSocket
-```
+```nginx
  map $http_upgrade $connection_upgrade {
      default upgrade;
      ''      close;
@@ -224,5 +224,12 @@ Route::get('/ws', function () {
 
 ### 6-3 在页面测试如下
 
+>测试页面效果
+
 ![页面测试如下](/static/img/websocket_test2.png)
+
+>握手过程
+
+![握手过程](/static/img/websocket.jpg)
+
 

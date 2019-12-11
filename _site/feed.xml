@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Dec 2019 16:01:02 +0800</pubDate>
-    <lastBuildDate>Wed, 11 Dec 2019 16:01:02 +0800</lastBuildDate>
+    <pubDate>Wed, 11 Dec 2019 16:09:46 +0800</pubDate>
+    <lastBuildDate>Wed, 11 Dec 2019 16:09:46 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -74,90 +74,90 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;2-更改配置configlaravelsphp&quot;&gt;2. 更改配置config/laravels.php&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// ...
-'websocket'      =&amp;gt; [
-    'enable'  =&amp;gt; true, // 看清楚，这里是true
-    'handler' =&amp;gt; \App\Services\WebSocketService::class,
-],
-'swoole'         =&amp;gt; [
-    //...
-    // dispatch_mode只能设置为2、4、5，https://wiki.swoole.com/wiki/page/277.html
-    'dispatch_mode' =&amp;gt; 2,
-    //...
-],
-// ...
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'websocket'&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'enable'&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 看清楚，这里是true&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'handler'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;\App\Services\WebSocketService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'swoole'&lt;/span&gt;         &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// dispatch_mode只能设置为2、4、5，https://wiki.swoole.com/wiki/page/277.html&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;'dispatch_mode'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;hr /&gt;
 &lt;h2 id=&quot;3-配置-nginx-支持-websocket&quot;&gt;3. 配置 Nginx 支持 WebSocket&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; map $http_upgrade $connection_upgrade {
-     default upgrade;
-     ''      close;
- }
- upstream swoole {
-     # 通过 IP:Port 连接
-     server 127.0.0.1:5200 weight=5 max_fails=3 fail_timeout=30s;
-     # 通过 UnixSocket Stream 连接，小诀窍：将socket文件放在/dev/shm目录下，可获得更好的性能
-     #server unix:/xxxpath/laravel-s-test/storage/laravels.sock weight=5 max_fails=3 fail_timeout=30s;
-     #server 192.168.1.1:5200 weight=3 max_fails=3 fail_timeout=30s;
-     #server 192.168.1.2:5200 backup;
-     keepalive 16;
- }
- server {
-     listen 80;
-     # 别忘了绑Host哟
-     server_name laravels.com;
-     root /xxxpath/laravel-s-test/public;
-     access_log /yyypath/log/nginx/$server_name.access.log  main;
-     autoindex off;
-     index index.html index.htm;
-     # Nginx处理静态资源(建议开启gzip)，LaravelS处理动态资源。
-     location / {
-         try_files $uri @laravels;
-     }
-     # 当请求PHP文件时直接响应404，防止暴露public/*.php
-     #location ~* \.php$ {
-     #    return 404;
-     #}
-     # Http和WebSocket共存，Nginx通过location区分
-     # !!! WebSocket连接时路径为/ws
-     # Javascript: var ws = new WebSocket(&quot;ws://laravels.com/ws&quot;);
-     location =/ws {
-         # proxy_connect_timeout 60s;
-         # proxy_send_timeout 60s;
-         # proxy_read_timeout：如果60秒内被代理的服务器没有响应数据给Nginx，那么Nginx会关闭当前连接；同时，Swoole的心跳设置也会影响连接的关闭
-         # proxy_read_timeout 60s;
-         proxy_http_version 1.1;
-         proxy_set_header X-Real-IP $remote_addr;
-         proxy_set_header X-Real-PORT $remote_port;
-         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-         proxy_set_header Host $http_host;
-         proxy_set_header Scheme $scheme;
-         proxy_set_header Server-Protocol $server_protocol;
-         proxy_set_header Server-Name $server_name;
-         proxy_set_header Server-Addr $server_addr;
-         proxy_set_header Server-Port $server_port;
-         proxy_set_header Upgrade $http_upgrade;
-         proxy_set_header Connection $connection_upgrade;
-         proxy_pass http://swoole;
-     }
-     location @laravels {
-         # proxy_connect_timeout 60s;
-         # proxy_send_timeout 60s;
-         # proxy_read_timeout 60s;
-         proxy_http_version 1.1;
-         proxy_set_header Connection &quot;&quot;;
-         proxy_set_header X-Real-IP $remote_addr;
-         proxy_set_header X-Real-PORT $remote_port;
-         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-         proxy_set_header Host $http_host;
-         proxy_set_header Scheme $scheme;
-         proxy_set_header Server-Protocol $server_protocol;
-         proxy_set_header Server-Name $server_name;
-         proxy_set_header Server-Addr $server_addr;
-         proxy_set_header Server-Port $server_port;
-         proxy_pass http://swoole;
-     }
- }
+&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$connection_upgrade&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;''&lt;/span&gt;      &lt;span class=&quot;s&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;upstream&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;swoole&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# 通过 IP:Port 连接
+&lt;/span&gt;     &lt;span class=&quot;kn&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;127.0.0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5200&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;weight=5&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;max_fails=3&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;fail_timeout=30s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# 通过 UnixSocket Stream 连接，小诀窍：将socket文件放在/dev/shm目录下，可获得更好的性能
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#server unix:/xxxpath/laravel-s-test/storage/laravels.sock weight=5 max_fails=3 fail_timeout=30s;
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#server 192.168.1.1:5200 weight=3 max_fails=3 fail_timeout=30s;
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#server 192.168.1.2:5200 backup;
+&lt;/span&gt;     &lt;span class=&quot;kn&quot;&gt;keepalive&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;k&quot;&gt;server&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;listen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;80&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# 别忘了绑Host哟
+&lt;/span&gt;     &lt;span class=&quot;kn&quot;&gt;server_name&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;laravels.com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/xxxpath/laravel-s-test/public&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;access_log&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/yyypath/log/nginx/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$server_name&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.access.log&lt;/span&gt;  &lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;autoindex&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;off&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.html&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.htm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# Nginx处理静态资源(建议开启gzip)，LaravelS处理动态资源。
+&lt;/span&gt;     &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@laravels&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;c1&quot;&gt;# 当请求PHP文件时直接响应404，防止暴露public/*.php
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#location ~* \.php$ {
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#    return 404;
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;#}
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Http和WebSocket共存，Nginx通过location区分
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# !!! WebSocket连接时路径为/ws
+&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;# Javascript: var ws = new WebSocket(&quot;ws://laravels.com/ws&quot;);
+&lt;/span&gt;     &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/ws&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;# proxy_connect_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# proxy_send_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# proxy_read_timeout：如果60秒内被代理的服务器没有响应数据给Nginx，那么Nginx会关闭当前连接；同时，Swoole的心跳设置也会影响连接的关闭
+&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# proxy_read_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;kn&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-IP&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-PORT&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Forwarded-For&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Scheme&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Protocol&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_protocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Addr&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Port&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Upgrade&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$connection_upgrade&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://swoole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;kn&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@laravels&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;c1&quot;&gt;# proxy_connect_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# proxy_send_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;c1&quot;&gt;# proxy_read_timeout 60s;
+&lt;/span&gt;         &lt;span class=&quot;kn&quot;&gt;proxy_http_version&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Connection&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-IP&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Real-PORT&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$remote_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;X-Forwarded-For&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$proxy_add_x_forwarded_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Host&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$http_host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Scheme&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$scheme&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Protocol&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_protocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Name&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Addr&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_set_header&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Server-Port&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$server_port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         &lt;span class=&quot;kn&quot;&gt;proxy_pass&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;http://swoole&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+ &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;4重载配置并重启laravels服务&quot;&gt;4.重载配置并重启Laravels服务&lt;/h2&gt;
@@ -239,7 +239,17 @@
 
 &lt;h3 id=&quot;6-3-在页面测试如下&quot;&gt;6-3 在页面测试如下&lt;/h3&gt;
 
+&lt;blockquote&gt;
+  &lt;p&gt;测试页面效果&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;p&gt;&lt;img src=&quot;/static/img/websocket_test2.png&quot; alt=&quot;页面测试如下&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;握手过程&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/static/img/websocket.jpg&quot; alt=&quot;握手过程&quot; /&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 10 Dec 2019 00:00:00 +0800</pubDate>
