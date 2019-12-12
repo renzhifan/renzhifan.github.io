@@ -109,6 +109,9 @@ root     32227     1  0 11:54 ?        00:00:00 /usr/bin/python /usr/bin/supervi
 supervisord -c /etc/supervisor/supervisord.conf
 #重载配置：
 supervisorctl reload
+
+sudo supervisorctl reread
+sudo supervisorctl update
 ```
 
 ```
