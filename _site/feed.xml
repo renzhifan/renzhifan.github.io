@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Dec 2019 17:15:16 +0800</pubDate>
-    <lastBuildDate>Thu, 12 Dec 2019 17:15:16 +0800</lastBuildDate>
+    <pubDate>Mon, 16 Dec 2019 15:03:41 +0800</pubDate>
+    <lastBuildDate>Mon, 16 Dec 2019 15:03:41 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1303,9 +1303,25 @@ QUEUE_CONNECTION=redis
       <item>
         <title>收集的好文链接(长期更新)</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#支付类&quot; id=&quot;markdown-toc-支付类&quot;&gt;支付类&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#工具类&quot; id=&quot;markdown-toc-工具类&quot;&gt;工具类&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#laravel相关&quot; id=&quot;markdown-toc-laravel相关&quot;&gt;laravel相关&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1支付类&quot; id=&quot;markdown-toc-1支付类&quot;&gt;1.支付类&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#1-1新微信服务号微信小程序微信支付支付宝支付-&quot; id=&quot;markdown-toc-1-1新微信服务号微信小程序微信支付支付宝支付-&quot;&gt;1-1.【新】微信服务号+微信小程序+微信支付+支付宝支付 &lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2工具类&quot; id=&quot;markdown-toc-2工具类&quot;&gt;2.工具类&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-1postman的免费快速美观的替代方案postwoman&quot; id=&quot;markdown-toc-2-1postman的免费快速美观的替代方案postwoman&quot;&gt;2-1.Postman的免费，快速，美观的替代方案——Postwoman&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-2正版phpstorm免费激活步骤图文详解&quot; id=&quot;markdown-toc-2-2正版phpstorm免费激活步骤图文详解&quot;&gt;2-2.正版phpstorm免费激活步骤（图文详解&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot; id=&quot;markdown-toc-2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot;&gt;2-3.Swoft(基于 Swoole 原生协程的新时代 PHP 高性能协程全栈框架)&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3laravel相关&quot; id=&quot;markdown-toc-3laravel相关&quot;&gt;3.laravel相关&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#3-1laravel--swoole--adminlte-效率开发模板&quot; id=&quot;markdown-toc-3-1laravel--swoole--adminlte-效率开发模板&quot;&gt;3-1.laravel + swoole + adminlte 效率开发模板&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4运维相关&quot; id=&quot;markdown-toc-4运维相关&quot;&gt;4.运维相关&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-1start-docker-lnmp&quot; id=&quot;markdown-toc-4-1start-docker-lnmp&quot;&gt;4-1.Start Docker LNMP&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-2docker-lnmp-docs&quot; id=&quot;markdown-toc-4-2docker-lnmp-docs&quot;&gt;4-2.Docker LNMP Docs&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
@@ -1313,15 +1329,33 @@ QUEUE_CONNECTION=redis
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
-&lt;h3 id=&quot;支付类&quot;&gt;支付类&lt;/h3&gt;
-&lt;p&gt;1、&lt;a href=&quot;https://github.com/zoujingli/WeChatDeveloper&quot;&gt;【新】微信服务号+微信小程序+微信支付+支付宝支付 &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1支付类&quot;&gt;1.支付类&lt;/h2&gt;
+
+&lt;h3 id=&quot;1-1新微信服务号微信小程序微信支付支付宝支付-&quot;&gt;1-1.&lt;a href=&quot;https://github.com/zoujingli/WeChatDeveloper&quot;&gt;【新】微信服务号+微信小程序+微信支付+支付宝支付 &lt;/a&gt;&lt;/h3&gt;
 
 &lt;hr /&gt;
-&lt;h3 id=&quot;工具类&quot;&gt;工具类&lt;/h3&gt;
-&lt;p&gt;1、&lt;a href=&quot;https://postwoman.io/&quot;&gt;Postman的免费，快速，美观的替代方案——Postwoman&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;2工具类&quot;&gt;2.工具类&lt;/h2&gt;
 
-&lt;h3 id=&quot;laravel相关&quot;&gt;laravel相关&lt;/h3&gt;
-&lt;p&gt;1、&lt;a href=&quot;https://github.com/cranux/laravelDevelopmentTemplate&quot;&gt;laravel + swoole + adminlte 效率开发模板&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2-1postman的免费快速美观的替代方案postwoman&quot;&gt;2-1.&lt;a href=&quot;https://postwoman.io/&quot;&gt;Postman的免费，快速，美观的替代方案——Postwoman&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-2正版phpstorm免费激活步骤图文详解&quot;&gt;2-2.&lt;a href=&quot;https://www.php.cn/tool/phpstorm/408348.html&quot;&gt;正版phpstorm免费激活步骤（图文详解&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot;&gt;2-3.&lt;a href=&quot;https://www.swoft.org/&quot;&gt;Swoft(基于 Swoole 原生协程的新时代 PHP 高性能协程全栈框架)&lt;/a&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3laravel相关&quot;&gt;3.laravel相关&lt;/h2&gt;
+
+&lt;h3 id=&quot;3-1laravel--swoole--adminlte-效率开发模板&quot;&gt;3-1.&lt;a href=&quot;https://github.com/cranux/laravelDevelopmentTemplate&quot;&gt;laravel + swoole + adminlte 效率开发模板&lt;/a&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4运维相关&quot;&gt;4.运维相关&lt;/h2&gt;
+
+&lt;h3 id=&quot;4-1start-docker-lnmp&quot;&gt;4-1.&lt;a href=&quot;https://github.com/khs1994-docker/lnmp/blob/master/README.cn.md&quot;&gt;Start Docker LNMP&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-2docker-lnmp-docs&quot;&gt;4-2.&lt;a href=&quot;https://docs.lnmp.khs1994.com/#%E5%BE%AE%E4%BF%A1%E8%AE%A2%E9%98%85%E5%8F%B7&quot;&gt;Docker LNMP Docs&lt;/a&gt;&lt;/h3&gt;
+&lt;hr /&gt;
 </description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/tool/%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/</link>
