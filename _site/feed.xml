@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Dec 2019 14:04:47 +0800</pubDate>
-    <lastBuildDate>Tue, 17 Dec 2019 14:04:47 +0800</lastBuildDate>
+    <pubDate>Tue, 17 Dec 2019 14:07:28 +0800</pubDate>
+    <lastBuildDate>Tue, 17 Dec 2019 14:07:28 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1527,6 +1527,7 @@ QUEUE_CONNECTION=redis
       &lt;li&gt;&lt;a href=&quot;#2-1postman的免费快速美观的替代方案postwoman&quot; id=&quot;markdown-toc-2-1postman的免费快速美观的替代方案postwoman&quot;&gt;2-1.Postman的免费，快速，美观的替代方案——Postwoman&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2-2正版phpstorm免费激活步骤图文详解&quot; id=&quot;markdown-toc-2-2正版phpstorm免费激活步骤图文详解&quot;&gt;2-2.正版phpstorm免费激活步骤（图文详解&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot; id=&quot;markdown-toc-2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot;&gt;2-3.Swoft(基于 Swoole 原生协程的新时代 PHP 高性能协程全栈框架)&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#2-4一个基于-mysql-协议swoole-开发的mysql数据库连接池&quot; id=&quot;markdown-toc-2-4一个基于-mysql-协议swoole-开发的mysql数据库连接池&quot;&gt;2-4.一个基于 MySQL 协议，Swoole 开发的MySQL数据库连接池。&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#3laravel相关&quot; id=&quot;markdown-toc-3laravel相关&quot;&gt;3.laravel相关&lt;/a&gt;    &lt;ul&gt;
@@ -1557,6 +1558,7 @@ QUEUE_CONNECTION=redis
 &lt;h3 id=&quot;2-2正版phpstorm免费激活步骤图文详解&quot;&gt;2-2.&lt;a href=&quot;https://www.php.cn/tool/phpstorm/408348.html&quot;&gt;正版phpstorm免费激活步骤（图文详解&lt;/a&gt;&lt;/h3&gt;
 
 &lt;h3 id=&quot;2-3swoft基于-swoole-原生协程的新时代-php-高性能协程全栈框架&quot;&gt;2-3.&lt;a href=&quot;https://www.swoft.org/&quot;&gt;Swoft(基于 Swoole 原生协程的新时代 PHP 高性能协程全栈框架)&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;2-4一个基于-mysql-协议swoole-开发的mysql数据库连接池&quot;&gt;2-4.&lt;a href=&quot;https://smproxy.louislivi.com/#/README&quot;&gt;一个基于 MySQL 协议，Swoole 开发的MySQL数据库连接池。&lt;/a&gt;&lt;/h3&gt;
 
 &lt;hr /&gt;
 
