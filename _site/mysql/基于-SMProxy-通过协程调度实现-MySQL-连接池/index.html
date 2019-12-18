@@ -154,7 +154,9 @@ Server starting ...
 </code></pre></div></div>
 <blockquote>
   <p>查看启动后的状态</p>
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@JD:/var/www/SMProxy# bin/SMProxy status
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>root@JD:/var/www/SMProxy# bin/SMProxy status
 SMProxy[v1.3.0] - Linux JD 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64
 Host: 0.0.0.0, Port: 3366, PHPVerison: 7.3.12-1+ubuntu16.04.1+deb.sury.org+1
 SwooleVersion: 4.4.12, WorkerNum: 2
@@ -189,16 +191,16 @@ Process :  26 total,  24 sleep,  2 query
 | 1814 | zhifan | localhost:58278 | bookstack | Sleep   | 6    |           |                             | 5.7.28-0ubuntu0.16.04.2 | mysql_native_password | 2             | read        |
 | 1815 | zhifan | localhost:58280 | bookstack | Sleep   | 6    |           |                             | 5.7.28-0ubuntu0.16.04.2 | mysql_native_password | 2             | read        |
 +------+--------+-----------------+-----------+---------+------+-----------+-----------------------------+-------------------------+-----------------------+---------------+-------------+
-</code></pre></div>  </div>
-  <hr />
-  <h2 id="我遇到的问题">我遇到的问题</h2>
-</blockquote>
+</code></pre></div></div>
+<hr />
+<h2 id="我遇到的问题">我遇到的问题</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2019-12-17 13:37:21 [warning] Config serverInfo-&gt;write-&gt;account is not exists! (/var/www/SMProxy/src/Base.php:99)
 2019-12-17 13:37:21 [warning] Config serverInfo-&gt;write-&gt;account is not exists! (/var/www/SMProxy/src/Base.php:99)
 2019-12-17 13:38:35 [info] Worker started!
 </code></pre></div></div>
 <p><a href="https://smproxy.louislivi.com/#/README?id=%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98">常见问题</a></p>
+
 <blockquote>
   <p>参考上面的说明 我把database-&gt;account下面的root 改为了zhifan 然后启动成功</p>
 </blockquote>

@@ -49,6 +49,7 @@ SMProxy version: v1.3.0@e6a640a
 Server starting ...
 ```
 >查看启动后的状态
+
 ```
 root@JD:/var/www/SMProxy# bin/SMProxy status
 SMProxy[v1.3.0] - Linux JD 4.4.0-62-generic #83-Ubuntu SMP Wed Jan 18 14:10:15 UTC 2017 x86_64
@@ -95,6 +96,7 @@ Process :  26 total,  24 sleep,  2 query
 2019-12-17 13:38:35 [info] Worker started!
 ```
 [常见问题](https://smproxy.louislivi.com/#/README?id=%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98)
+
 >参考上面的说明 我把database->account下面的root 改为了zhifan 然后启动成功
 
 >这里附上我自己的配置文件 对于account对应的用户名非root远程访问的一定要记得修改root那个key为自己账户的
