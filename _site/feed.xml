@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Dec 2019 11:39:26 +0800</pubDate>
-    <lastBuildDate>Tue, 24 Dec 2019 11:39:26 +0800</lastBuildDate>
+    <pubDate>Tue, 24 Dec 2019 11:44:45 +0800</pubDate>
+    <lastBuildDate>Tue, 24 Dec 2019 11:44:45 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1539,6 +1539,8 @@ QUEUE_CONNECTION=redis
   &lt;li&gt;&lt;a href=&quot;#4运维相关&quot; id=&quot;markdown-toc-4运维相关&quot;&gt;4.运维相关&lt;/a&gt;    &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#4-1start-docker-lnmp&quot; id=&quot;markdown-toc-4-1start-docker-lnmp&quot;&gt;4-1.Start Docker LNMP&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;#4-2docker-lnmp-docs&quot; id=&quot;markdown-toc-4-2docker-lnmp-docs&quot;&gt;4-2.Docker LNMP Docs&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-3laradock&quot; id=&quot;markdown-toc-4-3laradock&quot;&gt;4-3.laradock&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#4-4laradock_doc&quot; id=&quot;markdown-toc-4-4laradock_doc&quot;&gt;4-4.laradock_doc&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#5-权限管理相关&quot; id=&quot;markdown-toc-5-权限管理相关&quot;&gt;5. 权限管理相关&lt;/a&gt;    &lt;ul&gt;
@@ -1579,6 +1581,11 @@ QUEUE_CONNECTION=redis
 &lt;h3 id=&quot;4-1start-docker-lnmp&quot;&gt;4-1.&lt;a href=&quot;https://github.com/khs1994-docker/lnmp/blob/master/README.cn.md&quot;&gt;Start Docker LNMP&lt;/a&gt;&lt;/h3&gt;
 
 &lt;h3 id=&quot;4-2docker-lnmp-docs&quot;&gt;4-2.&lt;a href=&quot;https://docs.lnmp.khs1994.com/#%E5%BE%AE%E4%BF%A1%E8%AE%A2%E9%98%85%E5%8F%B7&quot;&gt;Docker LNMP Docs&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-3laradock&quot;&gt;4-3.&lt;a href=&quot;https://github.com/laradock/laradock&quot;&gt;laradock&lt;/a&gt;&lt;/h3&gt;
+
+&lt;h3 id=&quot;4-4laradock_doc&quot;&gt;4-4.&lt;a href=&quot;https://laradock-docs.linganmin.cn/zh/getting-started/#%E8%A6%81%E6%B1%82&quot;&gt;laradock_doc&lt;/a&gt;&lt;/h3&gt;
+
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;5-权限管理相关&quot;&gt;5. 权限管理相关&lt;/h2&gt;
