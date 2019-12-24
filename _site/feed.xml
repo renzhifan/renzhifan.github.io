@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 18 Dec 2019 15:24:05 +0800</pubDate>
-    <lastBuildDate>Wed, 18 Dec 2019 15:24:05 +0800</lastBuildDate>
+    <pubDate>Tue, 24 Dec 2019 11:39:26 +0800</pubDate>
+    <lastBuildDate>Tue, 24 Dec 2019 11:39:26 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1541,6 +1541,10 @@ QUEUE_CONNECTION=redis
       &lt;li&gt;&lt;a href=&quot;#4-2docker-lnmp-docs&quot; id=&quot;markdown-toc-4-2docker-lnmp-docs&quot;&gt;4-2.Docker LNMP Docs&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5-权限管理相关&quot; id=&quot;markdown-toc-5-权限管理相关&quot;&gt;5. 权限管理相关&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#5-1开始使用casbin&quot; id=&quot;markdown-toc-5-1开始使用casbin&quot;&gt;5-1.开始使用Casbin&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
@@ -1576,6 +1580,13 @@ QUEUE_CONNECTION=redis
 
 &lt;h3 id=&quot;4-2docker-lnmp-docs&quot;&gt;4-2.&lt;a href=&quot;https://docs.lnmp.khs1994.com/#%E5%BE%AE%E4%BF%A1%E8%AE%A2%E9%98%85%E5%8F%B7&quot;&gt;Docker LNMP Docs&lt;/a&gt;&lt;/h3&gt;
 &lt;hr /&gt;
+
+&lt;h2 id=&quot;5-权限管理相关&quot;&gt;5. 权限管理相关&lt;/h2&gt;
+
+&lt;h3 id=&quot;5-1开始使用casbin&quot;&gt;5-1.&lt;a href=&quot;https://casbin.org/docs/zh-CN/get-started&quot;&gt;开始使用Casbin&lt;/a&gt;&lt;/h3&gt;
+
+&lt;hr /&gt;
+
 </description>
         <pubDate>Fri, 29 Nov 2019 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/tool/%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/</link>
