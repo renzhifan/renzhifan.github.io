@@ -5,14 +5,18 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Dec 2019 13:57:54 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Dec 2019 13:57:54 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Dec 2019 14:00:53 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Dec 2019 14:00:53 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>以动画的方式，快速直观地查看 Git 文件变动历史</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#说明&quot; id=&quot;markdown-toc-说明&quot;&gt;说明&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1说明&quot; id=&quot;markdown-toc-1说明&quot;&gt;1.说明&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2效果如下&quot; id=&quot;markdown-toc-2效果如下&quot;&gt;2.效果如下：&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#3亲自体验&quot; id=&quot;markdown-toc-3亲自体验&quot;&gt;3.亲自体验&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4其他方式&quot; id=&quot;markdown-toc-4其他方式&quot;&gt;4.其他方式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5参考文章&quot; id=&quot;markdown-toc-5参考文章&quot;&gt;5.参考文章&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;blockquote&gt;
@@ -20,15 +24,18 @@
 &lt;/blockquote&gt;
 
 &lt;hr /&gt;
-&lt;h2 id=&quot;说明&quot;&gt;说明&lt;/h2&gt;
+&lt;h2 id=&quot;1说明&quot;&gt;1.说明&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/pomber/git-history&quot;&gt;pomber/git-history&lt;/a&gt;是一款能够以动画形式快速、直观地展现 Git 仓库内文件变动历史的 Web 工具。&lt;/p&gt;
 
-&lt;p&gt;效果如下：&lt;/p&gt;
+&lt;h2 id=&quot;2效果如下&quot;&gt;2.效果如下：&lt;/h2&gt;
 
 &lt;p&gt;&lt;img src=&quot;/static/img/git.gif&quot; alt=&quot;动图效果&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;你也可以 &lt;a href=&quot;https://github.githistory.xyz/babel/babel/blob/master/packages/babel-core/test/browserify.js&quot;&gt;亲自试试看&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;3亲自体验&quot;&gt;3.亲自体验&lt;/h2&gt;
 
+&lt;p&gt;&lt;a href=&quot;https://github.githistory.xyz/babel/babel/blob/master/packages/babel-core/test/browserify.js&quot;&gt;试试看&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4其他方式&quot;&gt;4.其他方式&lt;/h2&gt;
 &lt;blockquote&gt;
   &lt;p&gt;相比于主流的 Blame / Annotation，这种方式可以更加 迅速直观 地查看历史提交对于文件的变动影响。
 该作者除了将仓库开源外，还将项目托管在了 https://githistory.xyz/。我们可以打开 GitHub 上的任意文件，然后将域名 github.com 替换为 github.githistory.xyz 即可使用。
@@ -38,7 +45,9 @@
 
 &lt;p&gt;&lt;img src=&quot;/static/img/git_2.png&quot; alt=&quot;效果&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://learnku.com/articles/23986&quot;&gt;参考链接&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;5参考文章&quot;&gt;5.参考文章&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://learnku.com/articles/23986&quot;&gt;参考文章&lt;/a&gt;&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 25 Dec 2019 00:00:00 +0800</pubDate>
