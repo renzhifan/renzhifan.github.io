@@ -113,8 +113,7 @@ return [
 
 打开App\Http下的Kernel文件
       
-```
-
+```php
 protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,

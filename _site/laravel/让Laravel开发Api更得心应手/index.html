@@ -256,21 +256,20 @@ php artisan vendor:publish --provider="Medz\Cors\Laravel\Providers\LaravelServic
 
 <p>打开App\Http下的Kernel文件</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-protected $routeMiddleware = [
-        'auth' =&gt; \App\Http\Middleware\Authenticate::class,
-        'auth.basic' =&gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' =&gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'cache.headers' =&gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
-        'can' =&gt; \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' =&gt; \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'password.confirm' =&gt; \Illuminate\Auth\Middleware\RequirePassword::class,
-        'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
-        'throttle' =&gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' =&gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        ...... //前面的中间件
-        'cors'=&gt; \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
-];
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="nv">$routeMiddleware</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'auth'</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\Authenticate</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'auth.basic'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\AuthenticateWithBasicAuth</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'bindings'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\SubstituteBindings</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'cache.headers'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Http\Middleware\SetCacheHeaders</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'can'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\Authorize</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'guest'</span> <span class="o">=&gt;</span> <span class="nx">\App\Http\Middleware\RedirectIfAuthenticated</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'password.confirm'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\RequirePassword</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'signed'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\ValidateSignature</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'throttle'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\ThrottleRequests</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="s1">'verified'</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Auth\Middleware\EnsureEmailIsVerified</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="o">......</span> <span class="c1">//前面的中间件</span>
+        <span class="s1">'cors'</span><span class="o">=&gt;</span> <span class="nx">\Medz\Cors\Laravel\Middleware\ShouldGroup</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">];</span>
 </code></pre></div></div>
 
 <h3 id="6-5-修改路由增加刚才的中间件">6-5. 修改路由(增加刚才的中间件)</h3>
