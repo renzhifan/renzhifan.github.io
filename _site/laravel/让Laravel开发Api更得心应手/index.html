@@ -253,12 +253,24 @@ php artisan vendor:publish --provider="Medz\Cors\Laravel\Providers\LaravelServic
 </blockquote>
 
 <h3 id="6-4增加中间件别名">6-4.增加中间件别名</h3>
+
+<p>打开App\Http下的Kernel文件</p>
+
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 protected $routeMiddleware = [
+        'auth' =&gt; \App\Http\Middleware\Authenticate::class,
+        'auth.basic' =&gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' =&gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' =&gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' =&gt; \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' =&gt; \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'password.confirm' =&gt; \Illuminate\Auth\Middleware\RequirePassword::class,
+        'signed' =&gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' =&gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' =&gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         ...... //前面的中间件
         'cors'=&gt; \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
 ];
-
 </code></pre></div></div>
 
 <h3 id="6-5-修改路由增加刚才的中间件">6-5. 修改路由(增加刚才的中间件)</h3>

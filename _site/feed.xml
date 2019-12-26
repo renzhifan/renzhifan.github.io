@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Dec 2019 14:13:34 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Dec 2019 14:13:34 +0800</lastBuildDate>
+    <pubDate>Thu, 26 Dec 2019 17:30:21 +0800</pubDate>
+    <lastBuildDate>Thu, 26 Dec 2019 17:30:21 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -1901,12 +1901,24 @@ php artisan vendor:publish --provider=&quot;Medz\Cors\Laravel\Providers\LaravelS
 &lt;/blockquote&gt;
 
 &lt;h3 id=&quot;6-4增加中间件别名&quot;&gt;6-4.增加中间件别名&lt;/h3&gt;
+
+&lt;p&gt;打开App\Http下的Kernel文件&lt;/p&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
 protected $routeMiddleware = [
+        'auth' =&amp;gt; \App\Http\Middleware\Authenticate::class,
+        'auth.basic' =&amp;gt; \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings' =&amp;gt; \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' =&amp;gt; \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' =&amp;gt; \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' =&amp;gt; \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'password.confirm' =&amp;gt; \Illuminate\Auth\Middleware\RequirePassword::class,
+        'signed' =&amp;gt; \Illuminate\Routing\Middleware\ValidateSignature::class,
+        'throttle' =&amp;gt; \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'verified' =&amp;gt; \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         ...... //前面的中间件
         'cors'=&amp;gt; \Medz\Cors\Laravel\Middleware\ShouldGroup::class,
 ];
-
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;6-5-修改路由增加刚才的中间件&quot;&gt;6-5. 修改路由(增加刚才的中间件)&lt;/h3&gt;
