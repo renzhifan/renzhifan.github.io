@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Dec 2019 11:59:48 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Dec 2019 11:59:48 +0800</lastBuildDate>
+    <pubDate>Fri, 27 Dec 2019 16:22:30 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Dec 2019 16:22:30 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -739,7 +739,7 @@ Do you want to continue? [Y/n]
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;apt install&lt;/code&gt; 支持多参数，所以我们不必执行多次安装，只需在单条命令内写明多个软件包即可：&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; php7.3 php7.3-cli php7.3-fpm
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; php7.3 php7.3-cli php7.3-fpm php7.3-dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;按照 &lt;a href=&quot;https://laravel.com/docs/6.x/installation#installation&quot;&gt;Laravel安装文档&lt;/a&gt; 的说明，接着安装几个必备的 PHP 扩展：&lt;/p&gt;
