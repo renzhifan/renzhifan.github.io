@@ -5,9 +5,398 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Dec 2019 17:35:48 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Dec 2019 17:35:48 +0800</lastBuildDate>
+    <pubDate>Fri, 27 Dec 2019 11:59:48 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Dec 2019 11:59:48 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>ubuntu 安装 elasticsearch和ik-analyzer中文分词</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#安装java环境&quot; id=&quot;markdown-toc-安装java环境&quot;&gt;安装java环境&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#安装elasticsearch&quot; id=&quot;markdown-toc-安装elasticsearch&quot;&gt;安装Elasticsearch&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#安装公钥&quot; id=&quot;markdown-toc-安装公钥&quot;&gt;安装公钥&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#添加源&quot; id=&quot;markdown-toc-添加源&quot;&gt;添加源&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#安装es&quot; id=&quot;markdown-toc-安装es&quot;&gt;安装es&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#命令管理&quot; id=&quot;markdown-toc-命令管理&quot;&gt;命令管理&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#systemd&quot; id=&quot;markdown-toc-systemd&quot;&gt;systemd&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#启动&quot; id=&quot;markdown-toc-启动&quot;&gt;启动&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#关闭&quot; id=&quot;markdown-toc-关闭&quot;&gt;关闭&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#端口与查看&quot; id=&quot;markdown-toc-端口与查看&quot;&gt;端口与查看&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#访问试下&quot; id=&quot;markdown-toc-访问试下&quot;&gt;访问试下&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#配置-elasticsearch&quot; id=&quot;markdown-toc-配置-elasticsearch&quot;&gt;配置 Elasticsearch&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#配置参数&quot; id=&quot;markdown-toc-配置参数&quot;&gt;配置参数&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#包的目录布局&quot; id=&quot;markdown-toc-包的目录布局&quot;&gt;包的目录布局&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#安装-ik-analyzer&quot; id=&quot;markdown-toc-安装-ik-analyzer&quot;&gt;安装 ik-analyzer&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#安装&quot; id=&quot;markdown-toc-安装&quot;&gt;安装&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#重启服务&quot; id=&quot;markdown-toc-重启服务&quot;&gt;重启服务&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#测试&quot; id=&quot;markdown-toc-测试&quot;&gt;测试&lt;/a&gt;        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#测试不使用分词&quot; id=&quot;markdown-toc-测试不使用分词&quot;&gt;测试不使用分词&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#测试使用分词&quot; id=&quot;markdown-toc-测试使用分词&quot;&gt;测试使用分词&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;收集的好文链接(长期更新)&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h1 id=&quot;安装java环境&quot;&gt;安装java环境&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我们首先要配置java环境，这个需要Java8或者更新的包。一般执行以下命令时可以看看Java版本是否符合：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;default-jdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;安装elasticsearch&quot;&gt;安装Elasticsearch&lt;/h1&gt;
+
+&lt;h2 id=&quot;安装公钥&quot;&gt;安装公钥&lt;/h2&gt;
+&lt;p&gt;在安装之前我们需要下载和安装公钥，否则没有办法使用apt安装Elasticsearch。&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-qO&lt;/span&gt; - https://artifacts.elastic.co/GPG-KEY-elasticsearch | &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-key add -
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;添加源&quot;&gt;添加源&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;apt-transport-https
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;deb https://artifacts.elastic.co/packages/6.x/apt stable main&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sudo tee&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; /etc/apt/sources.list.d/elastic-6.x.list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;安装es&quot;&gt;安装es&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;elasticsearch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这样就安装好了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;命令管理&quot;&gt;命令管理&lt;/h2&gt;
+
+&lt;h3 id=&quot;systemd&quot;&gt;systemd&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;设置开机启动：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl daemon-reload
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;elasticsearch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;启动&quot;&gt;启动&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl start elasticsearch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h3 id=&quot;关闭&quot;&gt;关闭&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl stop elasticsearch
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;端口与查看&quot;&gt;端口与查看&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;netstat &lt;span class=&quot;nt&quot;&gt;-plntu&lt;/span&gt;  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;访问试下&quot;&gt;访问试下&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-XGET&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'127.0.0.1:9200/?pretty'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果返回的数据如下所示，即表示安装成功了：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+  &quot;name&quot; : &quot;fi_nt2e&quot;,
+  &quot;cluster_name&quot; : &quot;elasticsearch&quot;,
+  &quot;cluster_uuid&quot; : &quot;mO1Ly_8YSnWm1gYNPIL-MA&quot;,
+  &quot;version&quot; : {
+    &quot;number&quot; : &quot;6.8.6&quot;,
+    &quot;build_flavor&quot; : &quot;default&quot;,
+    &quot;build_type&quot; : &quot;deb&quot;,
+    &quot;build_hash&quot; : &quot;3d9f765&quot;,
+    &quot;build_date&quot; : &quot;2019-12-13T17:11:52.013738Z&quot;,
+    &quot;build_snapshot&quot; : false,
+    &quot;lucene_version&quot; : &quot;7.7.2&quot;,
+    &quot;minimum_wire_compatibility_version&quot; : &quot;5.6.0&quot;,
+    &quot;minimum_index_compatibility_version&quot; : &quot;5.0.0&quot;
+  },
+  &quot;tagline&quot; : &quot;You Know, for Search&quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意：Elasticsearch需要启动一会。如果启动完成立马执行上面的命令，可以会提示拒绝连接，多试几次就好了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;配置-elasticsearch&quot;&gt;配置 Elasticsearch&lt;/h2&gt;
+
+&lt;h3 id=&quot;配置参数&quot;&gt;配置参数&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Elasticsearch 默认情况下从 /etc/elasticsearch/elasticsearch.yml 文件中加载它的配置。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;RPM也又一个系统配置文件（/etc/sysconfig/elasticsearch），它允许你设置以下参数：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;参数&lt;/th&gt;
+      &lt;th&gt;解释&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;JAVA_HOME&lt;/td&gt;
+      &lt;td&gt;设置要使用的自定义Java路径&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MAX_OPEN_FILES&lt;/td&gt;
+      &lt;td&gt;打开文件的最大数量，默认65536&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MAX_LOCKED_MEMORY&lt;/td&gt;
+      &lt;td&gt;最大锁内存大小。如果你在elasticsearch.yml中使用bootstrap.memory_lock选项，请设置unlimited&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MAX_MAP_COUNT&lt;/td&gt;
+      &lt;td&gt;进程可能拥有的内存映射区域的最大值。如果使用 mmapfs 作为索引存储类型，请确认将其设置为较高的值。请检查linux内核文档关于max_map_count的更多信息。这是在elasticsearch启动之前通过sysctl设置的。默认是262144&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ES_PATH_CONF&lt;/td&gt;
+      &lt;td&gt;配置文件目录（需要包含elasticsearch.yml和log4j2.properties文件），默认路径是：/etc/elasticsearch&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ES_JAVA_OPTS&lt;/td&gt;
+      &lt;td&gt;Any additional JVM system properties you may want to apply.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RESTART_ON_UPGRADE&lt;/td&gt;
+      &lt;td&gt;配置软件包升级时将会重新启动，默认是false。这意味着你在安装软件包之后手动重启elasticsearch实例。这样做的原因是为了保障, 在集群中更新时，在高流量网络和减少你集群的响应时间的情况下导致分片的重新分配。&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;包的目录布局&quot;&gt;包的目录布局&lt;/h3&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;类型&lt;/th&gt;
+      &lt;th&gt;描述&lt;/th&gt;
+      &lt;th&gt;默认路径&lt;/th&gt;
+      &lt;th&gt;设置&lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+      &lt;th&gt; &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;home&lt;/td&gt;
+      &lt;td&gt;Elasticsearch家目录或者$ES_HOME&lt;/td&gt;
+      &lt;td&gt;/usr/share/elasticsearch&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;bin&lt;/td&gt;
+      &lt;td&gt;二进制脚本，包括elasticsearch去启动一个节点和elasticsearch-plugin安装插件&lt;/td&gt;
+      &lt;td&gt;/etc/elasticsearch&lt;/td&gt;
+      &lt;td&gt;conf&lt;/td&gt;
+      &lt;td&gt;配置文件，包含elasticsearch.yml&lt;/td&gt;
+      &lt;td&gt;/etc/elasticsearch&lt;/td&gt;
+      &lt;td&gt;ES_PATH_CONF&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;conf&lt;/td&gt;
+      &lt;td&gt;环境变量，包含 heap 大小，文件描述符。&lt;/td&gt;
+      &lt;td&gt;/etc/default/elasticsearch&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;data&lt;/td&gt;
+      &lt;td&gt;在节点上分配的每个索引/分片的数据文件的位置。可以容纳多个位置。&lt;/td&gt;
+      &lt;td&gt;/var/lib/elasticsearch&lt;/td&gt;
+      &lt;td&gt;path.data&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;logs&lt;/td&gt;
+      &lt;td&gt;日志文件位置。&lt;/td&gt;
+      &lt;td&gt;/var/log/elasticsearch&lt;/td&gt;
+      &lt;td&gt;path.logs&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;plugins&lt;/td&gt;
+      &lt;td&gt;插件文件位置. 每个插件将包含在一个子目录中.&lt;/td&gt;
+      &lt;td&gt;/usr/share/elasticsearch/plugins&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;repo&lt;/td&gt;
+      &lt;td&gt;共享文件系统存储库位置。可以容纳多个位置。文件系统存储库可以放置在指定目录中任何子目录中。&lt;/td&gt;
+      &lt;td&gt;Not configured&lt;/td&gt;
+      &lt;td&gt;path.repo&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;安装-ik-analyzer&quot;&gt;安装 ik-analyzer&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;注意这里一定要选择和你的es版本匹配的ik版本&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;安装&quot;&gt;安装&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/usr/share/elasticsearch/bin/elasticsearch-plugin &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.6/elasticsearch-analysis-ik-6.8.6.zip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;我的安装过程如下&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@JD:/etc/nginx/sites-available# /usr/share/elasticsearch/bin/elasticsearch-plugin &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.6/elasticsearch-analysis-ik-6.8.6.zip
+warning: Falling back to java on path. This behavior is deprecated. Specify JAVA_HOME
+-&amp;gt; Downloading https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.6/elasticsearch-analysis-ik-6.8.6.zip
+&lt;span class=&quot;o&quot;&gt;[=================================================]&lt;/span&gt; 100%   
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@     WARNING: plugin requires additional permissions     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; java.net.SocketPermission &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; connect,resolve
+See http://docs.oracle.com/javase/8/docs/technotes/guides/security/permissions.html
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;descriptions of what these permissions allow and the associated risks.
+
+Continue with installation? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;y/N]y
+-&amp;gt; Installed analysis-ik
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;出现以上显示 表示安装成功&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;重启服务&quot;&gt;重启服务&lt;/h2&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;systemctl restart elasticsearch  
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;重启之后要等待一下&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;测试&quot;&gt;测试&lt;/h2&gt;
+
+&lt;h3 id=&quot;测试不使用分词&quot;&gt;测试不使用分词&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@JD:/var/www/bbs# curl &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-XGET&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'localhost:9200/_analyze?pretty'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;text&quot;:&quot;北京欢迎你&quot;}'&lt;/span&gt; 
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;tokens&quot;&lt;/span&gt; : &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;北&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 0,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 1,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IDEOGRAPHIC&amp;gt;&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 0
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;京&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 1,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 2,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IDEOGRAPHIC&amp;gt;&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 1
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;欢&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 2,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 3,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IDEOGRAPHIC&amp;gt;&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 2
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;迎&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 3,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 4,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IDEOGRAPHIC&amp;gt;&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 3
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;你&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 4,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 5,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;&amp;lt;IDEOGRAPHIC&amp;gt;&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 4
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;测试使用分词&quot;&gt;测试使用分词&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;root@JD:/var/www/bbs# curl &lt;span class=&quot;nt&quot;&gt;-H&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Content-Type: application/json'&lt;/span&gt;  &lt;span class=&quot;nt&quot;&gt;-XGET&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'localhost:9200/_analyze?pretty'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{&quot;analyzer&quot;:&quot;ik_max_word&quot;,&quot;text&quot;:&quot;北京欢迎你&quot;}'&lt;/span&gt;  
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&quot;tokens&quot;&lt;/span&gt; : &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;北京&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 0,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 2,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;CN_WORD&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 0
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;欢迎&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 2,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 4,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;CN_WORD&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 1
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;,
+    &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&quot;token&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;你&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;start_offset&quot;&lt;/span&gt; : 4,
+      &lt;span class=&quot;s2&quot;&gt;&quot;end_offset&quot;&lt;/span&gt; : 5,
+      &lt;span class=&quot;s2&quot;&gt;&quot;type&quot;&lt;/span&gt; : &lt;span class=&quot;s2&quot;&gt;&quot;CN_CHAR&quot;&lt;/span&gt;,
+      &lt;span class=&quot;s2&quot;&gt;&quot;position&quot;&lt;/span&gt; : 2
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 27 Dec 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/tool/ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/</link>
+        <guid isPermaLink="true">http://localhost:4000/tool/ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/</guid>
+        
+        <category>ubuntu</category>
+        
+        <category>elasticsearch</category>
+        
+        <category>ik-analyzer</category>
+        
+        
+        <category>Tool</category>
+        
+      </item>
     
       <item>
         <title>收集的好文链接(长期更新)</title>
@@ -2548,168 +2937,6 @@ bundler install
         
         
         <category>Jekyll</category>
-        
-      </item>
-    
-      <item>
-        <title>laravel集成微信第三方登录</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#1laravel-socialite简介&quot; id=&quot;markdown-toc-1laravel-socialite简介&quot;&gt;1、Laravel Socialite简介&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#2安装扩展包&quot; id=&quot;markdown-toc-2安装扩展包&quot;&gt;2、安装扩展包&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#2-1安装相关依赖&quot; id=&quot;markdown-toc-2-1安装相关依赖&quot;&gt;2-1安装相关依赖&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#2-2安装weixin-web&quot; id=&quot;markdown-toc-2-2安装weixin-web&quot;&gt;2-2安装weixin-web&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#3相关配置&quot; id=&quot;markdown-toc-3相关配置&quot;&gt;3、相关配置&lt;/a&gt;    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-1-设置appconfigphp&quot; id=&quot;markdown-toc-3-1-设置appconfigphp&quot;&gt;3-1 设置app/config.php&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-2-配置configservicesphp&quot; id=&quot;markdown-toc-3-2-配置configservicesphp&quot;&gt;3-2 配置config/services.php&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-3-设置appproviderseventserviceproviderphp&quot; id=&quot;markdown-toc-3-3-设置appproviderseventserviceproviderphp&quot;&gt;3-3 设置app/Providers/EventServiceProvider.php&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-4-添加路由&quot; id=&quot;markdown-toc-3-4-添加路由&quot;&gt;3-4 添加路由&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#3-5-编写weixincontroller&quot; id=&quot;markdown-toc-3-5-编写weixincontroller&quot;&gt;3-5 编写WeixinController&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#常见错误&quot; id=&quot;markdown-toc-常见错误&quot;&gt;常见错误&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;1laravel-socialite简介&quot;&gt;1、Laravel Socialite简介&lt;/h2&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;除了传统的基于表单的登录认证外，Laravel 还可以通过 Laravel Socialite 提供 OAuth 认证，目前支持的认证驱动包括 Facebook、Twitter、Google、LinkedIn、GitHub 和 Bitbucket。
-官方文档&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;2安装扩展包&quot;&gt;2、安装扩展包&lt;/h2&gt;
-
-&lt;h3 id=&quot;2-1安装相关依赖&quot;&gt;2-1安装相关依赖&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer require laravel/socialite
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;2-2安装weixin-web&quot;&gt;2-2安装weixin-web&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;composer require socialiteproviders/weixin-web
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;注意网站实现微信登录需要的依赖包为socialiteproviders/weixin-web，如果是手机端App那么可以用socialiteproviders/weixin。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;3相关配置&quot;&gt;3、相关配置&lt;/h2&gt;
-
-&lt;h3 id=&quot;3-1-设置appconfigphp&quot;&gt;3-1 设置app/config.php&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;添加providers：&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'providers'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;\SocialiteProviders\Manager\ServiceProvider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;添加aliases：&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s1&quot;&gt;'aliases'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; 
-    &lt;span class=&quot;s1&quot;&gt;'Socialite'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Laravel\Socialite\Facades\Socialite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;3-2-配置configservicesphp&quot;&gt;3-2 配置config/services.php&lt;/h3&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'weixinweb'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'client_id'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'WEIXINWEB_KEY'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'client_secret'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'WEIXINWEB_SECRET'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
-    &lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'WEIXINWEB_REDIRECT_URI'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;3-3-设置appproviderseventserviceproviderphp&quot;&gt;3-3 设置app/Providers/EventServiceProvider.php&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;添加事件监听&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$listen&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;Registered&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;SendEmailVerificationNotification&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-
-    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;\SocialiteProviders\Manager\SocialiteWasCalled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-        &lt;span class=&quot;s1&quot;&gt;'SocialiteProviders\\WeixinWeb\\WeixinWebExtendSocialite@handle'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;3-4-添加路由&quot;&gt;3-4 添加路由&lt;/h3&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;这里由于我用的是dinggo Api 所有单独加了web中间件&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'auth/weixin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'AuthorizationsController@redirectToProvider'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$api&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'auth/weixin/callback'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'AuthorizationsController@handleProviderCallback'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;middleware&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'web'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;h3 id=&quot;3-5-编写weixincontroller&quot;&gt;3-5 编写WeixinController&lt;/h3&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Http\Controllers\Auto\ThirdLogin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Socialite&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Illuminate\Http\Request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;App\Http\Controllers\Controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SocialiteProviders\WeixinWeb\Provider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;WeixinController&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;redirectToProvider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Request&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;   
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Socialite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'weixinweb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;handleProviderCallback&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Request&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;nv&quot;&gt;$user_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Socialite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'weixinweb'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stateless&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;dd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$user_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;访问/api/auth/weixin，获得返回数据。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;常见错误&quot;&gt;常见错误&lt;/h2&gt;
-
-&lt;p&gt;１、微信授权回调域不符(redirect_uri不符)，参见下面规范：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/static/img/laravel-wechat.png&quot; alt=&quot;wechat&quot; /&gt;​&lt;/p&gt;
-
-&lt;p&gt;2、执行过程中出现一下错误：&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;exception&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'Laravel\Socialite\Two\InvalidStateException'&lt;/span&gt; 
-&lt;span class=&quot;nx&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;vendor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;laravel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;socialite&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Two&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;AbstractProvider&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;php&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;161&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;解决：
-通过stateless()方法禁止会话状态验证
-Socialite::driver(‘weixinweb’)-&amp;gt;stateless()-&amp;gt;user()&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;3、env配置如下
-#weixinweb&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;language-dotenv&quot;&gt;WEIXINWEB_KEY=********
-WEIXINWEB_SECRET=*******************
-WEIXINWEB_REDIRECT_URI=https://服务端域名/api/auth/weixin/callback
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-</description>
-        <pubDate>Mon, 28 Oct 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/laravel/laravel%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</link>
-        <guid isPermaLink="true">http://localhost:4000/laravel/laravel%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95/</guid>
-        
-        <category>laravel</category>
-        
-        <category>微信登录</category>
-        
-        
-        <category>laravel</category>
         
       </item>
     
