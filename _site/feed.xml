@@ -5,9 +5,170 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Dec 2019 16:22:30 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Dec 2019 16:22:30 +0800</lastBuildDate>
+    <pubDate>Wed, 08 Jan 2020 17:42:12 +0800</pubDate>
+    <lastBuildDate>Wed, 08 Jan 2020 17:42:12 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>网页调用微信Jssdk实现扫一扫功能</title>
+        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#微信公众号配置&quot; id=&quot;markdown-toc-微信公众号配置&quot;&gt;微信公众号配置&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#第一步js接口安全域设置&quot; id=&quot;markdown-toc-第一步js接口安全域设置&quot;&gt;第一步，JS接口安全域设置&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#第二步配置ip白名单&quot; id=&quot;markdown-toc-第二步配置ip白名单&quot;&gt;第二步，配置ip白名单。&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#导入相关js&quot; id=&quot;markdown-toc-导入相关js&quot;&gt;导入相关JS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#通过config接口注入权限验证配置&quot; id=&quot;markdown-toc-通过config接口注入权限验证配置&quot;&gt;通过config接口注入权限验证配置&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#调起扫一扫接口&quot; id=&quot;markdown-toc-调起扫一扫接口&quot;&gt;调起扫一扫接口&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#项目链接&quot; id=&quot;markdown-toc-项目链接&quot;&gt;项目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;em&gt;网页调用微信Jssdk实现扫一扫功能&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;微信公众号配置&quot;&gt;微信公众号配置&lt;/h2&gt;
+
+&lt;h3 id=&quot;第一步js接口安全域设置&quot;&gt;第一步，JS接口安全域设置&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/static/img/weixinsys/1.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;第二步配置ip白名单&quot;&gt;第二步，配置ip白名单。&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 换服务器的时候被坑了。。。一直报config:invalid signature，之前都是弄好的。后面忘了
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/static/img/weixinsys/2.png&quot; alt=&quot;1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;导入相关js&quot;&gt;导入相关JS&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;在需要调用JS接口的页面引入如下JS文件，（支持https）：
+&lt;a href=&quot;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&quot;&gt;http://res.wx.qq.com/open/js/jweixin-1.2.0.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;通过config接口注入权限验证配置&quot;&gt;通过config接口注入权限验证配置&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var _data = {
+
+  tokenUrl:location.href,
+
+  t:Math.random()
+
+};
+
+var _getWechatSignUrl = HTTP_AUTH_HOST_SERVER+'czj/wx/XSign';
+
+// 获取微信签名
+
+$.ajax({
+
+  url:_getWechatSignUrl,
+
+  data:_data,
+
+  dataType:&quot;jsonp&quot;,
+
+  success:function (o) {
+
+        //alert('获取数据：timestamp:'+o.value.timestamp+'nonceStr:'+o.value.nonceStr+'signature:'+o.value.signature);
+
+     console.log(&quot;获取微信签名:&quot;+o);
+
+  if (o.result ==true) {
+
+    wxConfig(o.value.timestamp, o.value.nonceStr, o.value.signature,o.value.appId);
+
+    console.log(&quot;appid:&quot;+o.value.appId)
+
+}
+
+},err:function (err) {
+
+      alert(&quot;----&quot;+err);
+
+}
+
+});
+
+function wxConfig(_timestamp, _nonceStr, _signature,_appId) {
+
+     //alert('获取数据：'+_timestamp+'\n'+_nonceStr+'\n'+_signature);
+
+    console.log('获取数据：' + _timestamp +'\n' + _nonceStr +'\n' + _signature);
+
+  wx.config({
+
+  debug:false,// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+
+        appId: _appId,// 必填，公众号的唯一标识
+
+        timestamp: _timestamp,// 必填，生成签名的时间戳
+
+        nonceStr: _nonceStr,// 必填，生成签名的随机串
+
+        signature: _signature,// 必填，签名，见附录1
+
+        jsApiList: ['checkJsApi','scanQRCode']
+
+// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+
+    });
+
+}     
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;调起扫一扫接口&quot;&gt;调起扫一扫接口&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;function scanCode(callback) {
+
+  wx.scanQRCode({
+
+  needResult:1,
+
+  scanType: [&quot;qrCode&quot;,&quot;barCode&quot;],
+
+  success:function (res) {
+
+        console.log(res)
+
+  //alert(JSON.stringify(res));
+
+        var result = res.resultStr;
+
+        setTimeout(callback(result),500);
+
+   },
+
+  error:function(res){
+
+        alert(JSON.stringify(res))
+
+        if(res.errMsg.indexOf('function_not_exist') &amp;gt;0){
+
+        alert('版本过低请升级')
+
+      }
+
+    }
+
+  });
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;项目链接&quot;&gt;项目链接&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/renzhifan/origin&quot;&gt;项目链接&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/tool/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD/</link>
+        <guid isPermaLink="true">http://localhost:4000/tool/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD/</guid>
+        
+        <category>微信</category>
+        
+        <category>扫一扫</category>
+        
+        
+        <category>Tool</category>
+        
+      </item>
     
       <item>
         <title>ubuntu 安装 elasticsearch和ik-analyzer中文分词</title>
@@ -2890,53 +3051,6 @@ QUEUE_CONNECTION=redis
         
         
         <category>laravel</category>
-        
-      </item>
-    
-      <item>
-        <title>Jekyll常用操作</title>
-        <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;#安装jekyll&quot; id=&quot;markdown-toc-安装jekyll&quot;&gt;安装jekyll&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#启动本地服务&quot; id=&quot;markdown-toc-启动本地服务&quot;&gt;启动本地服务&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#生成静态页面&quot; id=&quot;markdown-toc-生成静态页面&quot;&gt;生成静态页面&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;em&gt;使用jekyll编译github的gh-pages生成静态页面&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-&lt;h3 id=&quot;安装jekyll&quot;&gt;安装jekyll&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install ruby
-
-gem install jekyll
-
-gem install bundler
-
-gem install jekyll-paginate
-
-gem install jekyll-gist
-gem install bundler
-bundler install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;启动本地服务&quot;&gt;启动本地服务&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;hr /&gt;
-&lt;h3 id=&quot;生成静态页面&quot;&gt;生成静态页面&lt;/h3&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; bundle exec jekyll build
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-        <pubDate>Fri, 29 Nov 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/jekyll/Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2/</guid>
-        
-        <category>Jekyll</category>
-        
-        
-        <category>Jekyll</category>
         
       </item>
     
