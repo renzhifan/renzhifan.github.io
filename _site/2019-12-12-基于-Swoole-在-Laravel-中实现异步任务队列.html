@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!--[if lte IE 8]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+<!-- <title>基于 Swoole 在 Laravel 中实现异步任务队列 | 任志帆的个人博客</title> -->
+<title>基于 Swoole 在 Laravel 中实现异步任务队列</title>
+<meta name="title" content="基于 Swoole 在 Laravel 中实现异步任务队列">
+
+  <meta name="author" content="Zhifan Ren">
+
+<meta name="keywords" content="swoole laravel">
+
+
+<link rel="shortcut icon" href="/assets/image/favicon.ico" />
+<link rel="icon" href="/assets/image/favicon.ico" type="image/x-icon">
+
+<script src="/assets/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48260695-1', 'renzhifan.github.io');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.custom.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/highlight.css">
+
+
+<link href="/pages/rss.xml" rel="alternate" title="任志帆的个人博客" type="application/atom+xml">
+
+  </head>
+  <body>
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+    <button id="scroll-top"><span id="icon-arrow-up" class="fontello"></span></button>
+
+    <aside id="sidebar">
+  <nav id="tags">
+    <a href="/index.html" id="avatar" style="background-image:url(/assets/image/avatar.png)"></a>
+
+    <ul id="tags__ul">
+      <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
+      
+        <li id="Tool" class="tags__li tags-btn">Tool</li>
+      
+        <li id="nginx" class="tags__li tags-btn">nginx</li>
+      
+        <li id="mysql" class="tags__li tags-btn">mysql</li>
+      
+        <li id="laravel" class="tags__li tags-btn">laravel</li>
+      
+        <li id="Jekyll" class="tags__li tags-btn">Jekyll</li>
+      
+        <li id="swoole" class="tags__li tags-btn">swoole</li>
+      
+        <li id="git" class="tags__li tags-btn">git</li>
+      
+        <li id="lnmp" class="tags__li tags-btn">lnmp</li>
+      
+    </ul>
+
+    <div id="tags__bottom">
+      <a href="https://github.com/renzhifan" id="icon-github" class="tags-btn fontello" target="_blank"></a>
+      <a href="/pages/rss.xml" id="icon-feed" class="tags-btn fontello" target="_blank"></a>
+      <a href="mailto:zhifan1005@163.com" id="icon-email" class="tags-btn fontello"></a>
+    </div>
+  </nav> <!-- end #tags -->
+
+  <div id="posts-list">
+    <form action="" id="search-form">
+      <a href="/index.html" id="mobile-avatar" style="background-image:url(/assets/image/avatar.png)"></a>
+      <!-- NOTE: input field is disabled by default -->
+      <input id="search-input" type="text" placeholder="站内搜索..." >
+    </form>
+
+    <nav id="pl__container">
+    
+      <!-- <a class="Tool pl__all" href="/2020-01-02-%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD.html"><span class="pl__circle"></span><span class="pl__title">网页调用微信Jssdk实现扫一扫功能</span><span class="pl__date">2020-01-02</span></a> -->
+      <a class="Tool pl__all" href="/2020-01-02-%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD.html"><span class="pl__circle"></span><span class="pl__title">网页调用微信Jssdk实现扫一扫功能</span></a>
+    
+      <!-- <a class="Tool pl__all" href="/2019-12-27-ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D.html"><span class="pl__circle"></span><span class="pl__title">ubuntu 安装 elasticsearch和ik-analyzer中文分词</span><span class="pl__date">2019-12-27</span></a> -->
+      <a class="Tool pl__all" href="/2019-12-27-ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D.html"><span class="pl__circle"></span><span class="pl__title">ubuntu 安装 elasticsearch和ik-analyzer中文分词</span></a>
+    
+      <!-- <a class="Tool pl__all" href="/2019-12-26-%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0).html"><span class="pl__circle"></span><span class="pl__title">收集的好文链接(长期更新)</span><span class="pl__date">2019-12-26</span></a> -->
+      <a class="Tool pl__all" href="/2019-12-26-%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0).html"><span class="pl__circle"></span><span class="pl__title">收集的好文链接(长期更新)</span></a>
+    
+      <!-- <a class="lnmp pl__all" href="/2019-12-26-Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83.html"><span class="pl__circle"></span><span class="pl__title">Ubuntu18.04 搭建 PHP 环境</span><span class="pl__date">2019-12-26</span></a> -->
+      <a class="lnmp pl__all" href="/2019-12-26-Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83.html"><span class="pl__circle"></span><span class="pl__title">Ubuntu18.04 搭建 PHP 环境</span></a>
+    
+      <!-- <a class="git pl__all" href="/2019-12-25-%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2.html"><span class="pl__circle"></span><span class="pl__title">以动画的方式，快速直观地查看 Git 文件变动历史</span><span class="pl__date">2019-12-25</span></a> -->
+      <a class="git pl__all" href="/2019-12-25-%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2.html"><span class="pl__circle"></span><span class="pl__title">以动画的方式，快速直观地查看 Git 文件变动历史</span></a>
+    
+      <!-- <a class="mysql pl__all" href="/2019-12-17-%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0.html"><span class="pl__circle"></span><span class="pl__title">基于 MySQL 协议，Swoole 开发的MySQL数据库连接池使用教程。</span><span class="pl__date">2019-12-17</span></a> -->
+      <a class="mysql pl__all" href="/2019-12-17-%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0.html"><span class="pl__circle"></span><span class="pl__title">基于 MySQL 协议，Swoole 开发的MySQL数据库连接池使用教程。</span></a>
+    
+      <!-- <a class="swoole pl__all" href="/2019-12-12-%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.html"><span class="pl__circle"></span><span class="pl__title">基于 Swoole 在 Laravel 中实现异步任务队列</span><span class="pl__date">2019-12-12</span></a> -->
+      <a class="swoole pl__all" href="/2019-12-12-%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.html"><span class="pl__circle"></span><span class="pl__title">基于 Swoole 在 Laravel 中实现异步任务队列</span></a>
+    
+      <!-- <a class="swoole pl__all" href="/2019-12-10-%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8.html"><span class="pl__circle"></span><span class="pl__title">在 Laravel 中集成 Swoole 实现 WebSocket 服务器</span><span class="pl__date">2019-12-10</span></a> -->
+      <a class="swoole pl__all" href="/2019-12-10-%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8.html"><span class="pl__circle"></span><span class="pl__title">在 Laravel 中集成 Swoole 实现 WebSocket 服务器</span></a>
+    
+      <!-- <a class="swoole pl__all" href="/2019-12-09-%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.html"><span class="pl__circle"></span><span class="pl__title">基于swoole实现HTTP高性能服务器</span><span class="pl__date">2019-12-09</span></a> -->
+      <a class="swoole pl__all" href="/2019-12-09-%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.html"><span class="pl__circle"></span><span class="pl__title">基于swoole实现HTTP高性能服务器</span></a>
+    
+      <!-- <a class="laravel pl__all" href="/2019-12-06-%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B.html"><span class="pl__circle"></span><span class="pl__title">让Laravel开发Api更得心应手</span><span class="pl__date">2019-12-06</span></a> -->
+      <a class="laravel pl__all" href="/2019-12-06-%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B.html"><span class="pl__circle"></span><span class="pl__title">让Laravel开发Api更得心应手</span></a>
+    
+      <!-- <a class="Jekyll pl__all" href="/2019-11-29-Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2.html"><span class="pl__circle"></span><span class="pl__title">Jekyll常用操作</span><span class="pl__date">2019-11-29</span></a> -->
+      <a class="Jekyll pl__all" href="/2019-11-29-Jekyll%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2.html"><span class="pl__circle"></span><span class="pl__title">Jekyll常用操作</span></a>
+    
+      <!-- <a class="laravel pl__all" href="/2019-10-28-laravel%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95.html"><span class="pl__circle"></span><span class="pl__title">laravel集成微信第三方登录</span><span class="pl__date">2019-10-28</span></a> -->
+      <a class="laravel pl__all" href="/2019-10-28-laravel%E9%9B%86%E6%88%90%E5%BE%AE%E4%BF%A1%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95.html"><span class="pl__circle"></span><span class="pl__title">laravel集成微信第三方登录</span></a>
+    
+      <!-- <a class="laravel pl__all" href="/2019-10-28-laravel5-5-%E5%8A%A8%E6%80%81%E5%88%87%E6%8D%A2%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%93%8D%E4%BD%9C.html"><span class="pl__circle"></span><span class="pl__title">laravel5.5 动态切换多语言操作</span><span class="pl__date">2019-10-28</span></a> -->
+      <a class="laravel pl__all" href="/2019-10-28-laravel5-5-%E5%8A%A8%E6%80%81%E5%88%87%E6%8D%A2%E5%A4%9A%E8%AF%AD%E8%A8%80%E6%93%8D%E4%BD%9C.html"><span class="pl__circle"></span><span class="pl__title">laravel5.5 动态切换多语言操作</span></a>
+    
+      <!-- <a class="mysql pl__all" href="/2019-10-28-MYSQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.html"><span class="pl__circle"></span><span class="pl__title">MYSQL 主从复制</span><span class="pl__date">2019-10-28</span></a> -->
+      <a class="mysql pl__all" href="/2019-10-28-MYSQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6.html"><span class="pl__circle"></span><span class="pl__title">MYSQL 主从复制</span></a>
+    
+      <!-- <a class="nginx pl__all" href="/2019-10-28-Let's-Encrypt-%E5%AE%9E%E7%8E%B0nginx%E7%AB%99%E7%82%B9-SSL.html"><span class="pl__circle"></span><span class="pl__title">Let's Encrypt 实现nginx站点 SSL</span><span class="pl__date">2019-10-28</span></a> -->
+      <a class="nginx pl__all" href="/2019-10-28-Let's-Encrypt-%E5%AE%9E%E7%8E%B0nginx%E7%AB%99%E7%82%B9-SSL.html"><span class="pl__circle"></span><span class="pl__title">Let's Encrypt 实现nginx站点 SSL</span></a>
+    
+      <!-- <a class="Tool pl__all" href="/2019-10-28-Centos-7-%E9%85%8D%E7%BD%AE-supervisor-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91.html"><span class="pl__circle"></span><span class="pl__title">Centos-7-配置-supervisor-遇到的坑</span><span class="pl__date">2019-10-28</span></a> -->
+      <a class="Tool pl__all" href="/2019-10-28-Centos-7-%E9%85%8D%E7%BD%AE-supervisor-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91.html"><span class="pl__circle"></span><span class="pl__title">Centos-7-配置-supervisor-遇到的坑</span></a>
+    
+    </nav>
+  </div> <!-- end #posts-list -->
+</aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+    <h1 id="post__title" data-identifier="20191212">基于 Swoole 在 Laravel 中实现异步任务队列</h1>
+    <div id="post__date">2019-12-12</div>
+    <declare id="declare" class="declare">
+      <hr/> 本博客所有文章采用的授权方式为
+        <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh">
+          <b>自由转载-非商用-非衍生-保持署名</b>
+        </a>
+      ，转载请务必注明出处，谢谢。<br /><br />
+      声明：<br />本博客欢迎转发，但请保留原作者信息!<br />博客地址：<a href="https://renzhifan.github.io">任志帆的博客</a>;<br />内容系本人学习、研究和总结，如有雷同，实属荣幸！
+      <hr/>
+    </declare>
+    <ul id="markdown-toc">
+  <li><a href="#1实现原理" id="markdown-toc-1实现原理">1.实现原理</a></li>
+  <li><a href="#2-编写任务类-appjobstesttaskphp" id="markdown-toc-2-编写任务类-appjobstesttaskphp">2. 编写任务类 App\Jobs\TestTask.php</a></li>
+  <li><a href="#3-编写测试代码" id="markdown-toc-3-编写测试代码">3. 编写测试代码</a></li>
+  <li><a href="#4修改配置文件" id="markdown-toc-4修改配置文件">4.修改配置文件</a></li>
+  <li><a href="#5测试异步任务执行" id="markdown-toc-5测试异步任务执行">5.测试异步任务执行</a></li>
+</ul>
+
+<blockquote>
+  <p><strong><em>基于 Swoole 在 Laravel 中实现异步任务队列</em></strong></p>
+</blockquote>
+
+<hr />
+<h2 id="1实现原理">1.实现原理</h2>
+
+<blockquote>
+  <p>PHP 本身的设计是同步阻塞的，不支持多线程和异步 IO，所以当我们执行一些耗时的操作，
+比如发送广播，或者邮件，如果直接在当前进程中操作，会导致服务器响应变慢，
+因此要借助一些第三方服务来处理以实现异步功能，
+比如队列，而 Swoole 作为 PHP 异步网络通信引擎，
+自然也对异步任务处理提供了支持，
+其底层的实现原理和常见的异步队列类似：
+将耗时任务投递到 TaskWorker 进程池后返回
+（相应任务会通过 TaskWorker 异步执行，执行成功后可以调用事先注册的回调函数进行后续处理），
+继续后续业务逻辑的执行，而不影响当前请求的处理速度。</p>
+</blockquote>
+
+<hr />
+<h2 id="2-编写任务类-appjobstesttaskphp">2. 编写任务类 App\Jobs\TestTask.php</h2>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">App\Jobs</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Hhxsv5\LaravelS\Swoole\Task\Task</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Log</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">TestTask</span> <span class="k">extends</span> <span class="nx">Task</span>
+<span class="p">{</span>
+    <span class="c1">// 待处理任务数据</span>
+    <span class="k">private</span> <span class="nv">$data</span><span class="p">;</span>
+
+    <span class="c1">// 任务处理结果</span>
+    <span class="k">private</span> <span class="nv">$result</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">=</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 任务投递调用 task 回调时触发，等同于 Swoole 中的 onTask 逻辑</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">Log</span><span class="o">::</span><span class="na">info</span><span class="p">(</span><span class="nx">__CLASS__</span> <span class="o">.</span> <span class="s1">': 开始处理任务'</span><span class="p">,</span> <span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span><span class="p">]);</span>
+        <span class="c1">//  todo 耗时任务具体处理逻辑在这里编写</span>
+        <span class="nb">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// 模拟任务需要3秒才能执行完毕</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'The result of '</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">data</span> <span class="o">.</span> <span class="s1">' is balabalabala'</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 任务完成调用 finish 回调时触发，等同于 Swoole 中的 onFinish 逻辑</span>
+    <span class="c1">// 可选的，完成事件，任务处理完后的逻辑，运行在Worker进程中，可以投递任务</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">finish</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">\Log</span><span class="o">::</span><span class="na">info</span><span class="p">(</span><span class="nx">__CLASS__</span> <span class="o">.</span> <span class="s1">':finish start'</span><span class="p">,</span> <span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">]);</span>
+<span class="c1">//        Task::deliver(new TestTask2('task2')); // 投递其他任务</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<hr />
+<h2 id="3-编写测试代码">3. 编写测试代码</h2>
+
+<blockquote>
+  <p>然后在 routes/web.php 编写投递异步任务的测试代码如下：</p>
+</blockquote>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Hhxsv5\LaravelS\Swoole\Task\Task</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">App\Jobs\TestTask</span><span class="p">;</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">'/task/test'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$task</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TestTask</span><span class="p">(</span><span class="s1">'task data'</span><span class="p">);</span>
+<span class="c1">// $task-&gt;delay(3);// 延迟3秒投放任务</span>
+    <span class="nv">$ret</span> <span class="o">=</span> <span class="nx">Task</span><span class="o">::</span><span class="na">deliver</span><span class="p">(</span><span class="nv">$task</span><span class="p">);</span>
+    <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$ret</span><span class="p">);</span><span class="c1">//判断是否投递成功</span>
+<span class="p">});</span>
+</code></pre></div></div>
+<blockquote>
+  <p>该命令会发布配置文件 laravels.php 到 config 目录下，以及脚本文件到 bin 目录下：</p>
+</blockquote>
+
+<h2 id="4修改配置文件">4.修改配置文件</h2>
+
+<blockquote>
+  <p>在配置文件 config/laravels.php 中取消 task_worker_num 配置项前面的注释：</p>
+</blockquote>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s1">'swoole'</span> <span class="o">=&gt;</span> <span class="p">[</span>
+     <span class="o">...</span>
+     <span class="s1">'task_worker_num'</span>    <span class="o">=&gt;</span> <span class="nb">function_exists</span><span class="p">(</span><span class="s1">'swoole_cpu_num'</span><span class="p">)</span> <span class="o">?</span> <span class="nx">swoole_cpu_num</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+     <span class="o">...</span>
+ <span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="5测试异步任务执行">5.测试异步任务执行</h2>
+
+<blockquote>
+  <p><strong><em>接下来，我们重启启动 Swoole 服务器（基于 Swoole HTTP 服务器访问路由才能成功投递异步任务）：</em></strong></p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/laravels restart
+</code></pre></div></div>
+
+<blockquote>
+  <p>然后在浏览器中通过 http://你的域名/task/test 访问测试路由，页面立即显示投递成功：</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool(true)
+</code></pre></div></div>
+<blockquote>
+  <p>然后我们去 storage/logs 目录下查看最新的日志信息，可以看到任务执行其实耗费了 3 秒：</p>
+</blockquote>
+
+<p><img src="/static/img/swoole_asynchronous.png" alt="如图所示" /></p>
+
+</article>
+
+
+        </br>
+        <hr align="center" width="100%" color="#F1F1F1" size="3"></hr>
+        <p id="copyright">
+  Powered by <a href="http://jekyllrb.com">Jekyll</a> & <a href="https://github.com/P233/3-Jekyll">3-Jekyll</a> & <a href="http://pages.github.com">GitHub</a>
+  </br>
+  Copyright © 2019 - 2020 <a href="/index.html">ZhifanRen</a> All Rights Reserved.
+  &nbsp;
+</p>
+
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">章节列表</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+    <script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.pjax.js"></script>
+<script src="/assets/js/nprogress.js"></script>
+<script src="/assets/js/searchbox.js"></script>
+<script src="/assets/js/script.js"></script>
+
+
+   </body>
+ </html>

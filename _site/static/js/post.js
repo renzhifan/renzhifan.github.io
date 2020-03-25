@@ -27,11 +27,11 @@ function share(){
 function gitment() {
     var gitment = new Gitment({
         id: window.location.pathname,
-        owner: 'renzhifan',
-        repo: 'blog',
+        owner: '',
+        repo: '',
         oauth: {
-            client_id: 'f3dd18c7c10242a9c275',
-            client_secret: '654fc9ad99218ceab536470dd466354ef618c04d',
+            client_id: '',
+            client_secret: '',
         },
     });
     gitment.render('post-comment')

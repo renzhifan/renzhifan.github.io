@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>renzhifan</title>
+    <title>任志帆的个人博客</title>
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Jan 2020 17:42:12 +0800</pubDate>
-    <lastBuildDate>Wed, 08 Jan 2020 17:42:12 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Mar 2020 11:21:37 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Mar 2020 11:21:37 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -158,8 +158,8 @@ function wxConfig(_timestamp, _nonceStr, _signature,_appId) {
 &lt;p&gt;&lt;a href=&quot;https://github.com/renzhifan/origin&quot;&gt;项目链接&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 02 Jan 2020 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/tool/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD/</link>
-        <guid isPermaLink="true">http://localhost:4000/tool/%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD/</guid>
+        <link>http://localhost:4000/2020-01-02-%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2020-01-02-%E7%BD%91%E9%A1%B5%E8%B0%83%E7%94%A8%E5%BE%AE%E4%BF%A1Jssdk%E5%AE%9E%E7%8E%B0%E6%89%AB%E4%B8%80%E6%89%AB%E5%8A%9F%E8%83%BD.html</guid>
         
         <category>微信</category>
         
@@ -545,8 +545,8 @@ Continue with installation? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;y/N]y
 
 </description>
         <pubDate>Fri, 27 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/tool/ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/</link>
-        <guid isPermaLink="true">http://localhost:4000/tool/ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D/</guid>
+        <link>http://localhost:4000/2019-12-27-ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-27-ubuntu-%E5%AE%89%E8%A3%85-elasticsearch%E5%92%8Cik-analyzer%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D.html</guid>
         
         <category>ubuntu</category>
         
@@ -641,8 +641,8 @@ Continue with installation? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;y/N]y
 
 </description>
         <pubDate>Thu, 26 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/tool/%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/</link>
-        <guid isPermaLink="true">http://localhost:4000/tool/%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0)/</guid>
+        <link>http://localhost:4000/2019-12-26-%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0).html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-26-%E6%94%B6%E8%97%8F%E7%9A%84%E5%A5%BD%E6%96%87%E9%93%BE%E6%8E%A5(%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0).html</guid>
         
         <category>好文收藏</category>
         
@@ -1462,8 +1462,8 @@ service mysql restart
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 26 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/lnmp/Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83/</link>
-        <guid isPermaLink="true">http://localhost:4000/lnmp/Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83/</guid>
+        <link>http://localhost:4000/2019-12-26-Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-26-Ubuntu18.04-%E6%90%AD%E5%BB%BA-PHP-%E7%8E%AF%E5%A2%83.html</guid>
         
         <category>ubuntu</category>
         
@@ -1524,8 +1524,8 @@ service mysql restart
 
 </description>
         <pubDate>Wed, 25 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/git/%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2/</link>
-        <guid isPermaLink="true">http://localhost:4000/git/%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2/</guid>
+        <link>http://localhost:4000/2019-12-25-%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-25-%E4%BB%A5%E5%8A%A8%E7%94%BB%E7%9A%84%E6%96%B9%E5%BC%8F-%E5%BF%AB%E9%80%9F%E7%9B%B4%E8%A7%82%E5%9C%B0%E6%9F%A5%E7%9C%8B-Git-%E6%96%87%E4%BB%B6%E5%8F%98%E5%8A%A8%E5%8E%86%E5%8F%B2.html</guid>
         
         <category>git</category>
         
@@ -1740,8 +1740,8 @@ Process :  26 total,  24 sleep,  2 query
 &lt;p&gt;&lt;a href=&quot;https://smproxy.louislivi.com/#/README&quot;&gt;参考官网链接&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 17 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/mysql/%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0/</link>
-        <guid isPermaLink="true">http://localhost:4000/mysql/%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0/</guid>
+        <link>http://localhost:4000/2019-12-17-%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-17-%E5%9F%BA%E4%BA%8E-SMProxy-%E9%80%9A%E8%BF%87%E5%8D%8F%E7%A8%8B%E8%B0%83%E5%BA%A6%E5%AE%9E%E7%8E%B0-MySQL-%E8%BF%9E%E6%8E%A5%E6%B1%A0.html</guid>
         
         <category>SMProxy</category>
         
@@ -1875,8 +1875,8 @@ Process :  26 total,  24 sleep,  2 query
 &lt;p&gt;&lt;img src=&quot;/static/img/swoole_asynchronous.png&quot; alt=&quot;如图所示&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 12 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/swoole/%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97/</link>
-        <guid isPermaLink="true">http://localhost:4000/swoole/%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97/</guid>
+        <link>http://localhost:4000/2019-12-12-%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-12-%E5%9F%BA%E4%BA%8E-Swoole-%E5%9C%A8-Laravel-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97.html</guid>
         
         <category>swoole</category>
         
@@ -2131,8 +2131,8 @@ Process :  26 total,  24 sleep,  2 query
 
 </description>
         <pubDate>Tue, 10 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/swoole/%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-        <guid isPermaLink="true">http://localhost:4000/swoole/%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <link>http://localhost:4000/2019-12-10-%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-10-%E5%9C%A8-Laravel-%E4%B8%AD%E9%9B%86%E6%88%90-Swoole-%E5%AE%9E%E7%8E%B0-WebSocket-%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
         
         <category>swoole</category>
         
@@ -2287,8 +2287,8 @@ LARAVELS_DAEMONIZE=true
 
 </description>
         <pubDate>Mon, 09 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/swoole/%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-        <guid isPermaLink="true">http://localhost:4000/swoole/%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+        <link>http://localhost:4000/2019-12-09-%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-09-%E5%9F%BA%E4%BA%8Eswoole%E5%AE%9E%E7%8E%B0%E9%AB%98%E6%80%A7%E8%83%BDHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
         
         <category>swoole</category>
         
@@ -3040,8 +3040,8 @@ QUEUE_CONNECTION=redis
 &lt;h2 id=&quot;13supervisor守护进程-可参考我的文章centos-7-配置-supervisor-遇到的坑&quot;&gt;13.Supervisor守护进程 （可参考我的文章）&lt;a href=&quot;https://renzhifan.github.io/tool/Centos-7-%E9%85%8D%E7%BD%AE-supervisor-%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91/&quot;&gt;Centos-7-配置-supervisor-遇到的坑&lt;/a&gt;&lt;/h2&gt;
 </description>
         <pubDate>Fri, 06 Dec 2019 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/laravel/%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B/</link>
-        <guid isPermaLink="true">http://localhost:4000/laravel/%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B/</guid>
+        <link>http://localhost:4000/2019-12-06-%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019-12-06-%E8%AE%A9Laravel%E5%BC%80%E5%8F%91Api%E6%9B%B4%E5%BE%97%E5%BF%83%E5%BA%94%E6%89%8B.html</guid>
         
         <category>api</category>
         

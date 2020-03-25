@@ -1,52 +1,58 @@
-plugins: [jekyll-paginate]
+# Site settings
+title: 任志帆的个人博客
+email: zhifan1005@163.com
+description: > #任志帆的个人博客
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "https://renzhifan.github.io" # the base hostname & protocol for your site
 
-permalink: /:categories/:title/
+# Paginate（分页）
+#gems: [jekyll-paginate]
+# 分页时每页博文数量
+#paginate: 10
+#paginate_path: "page:num"
 
-highlighter: rouge
-markdown: kramdown
+
+# Build settings
+# 语法高亮
+#highlighter: rouge
+# markdown解释器
+#markdown: kramdown
 kramdown:
-  input:  GFM
+  input: GFM
   syntax_highlighter: rouge
 
+#relative_permalinks: true
+#博文的链接样式
+permalink: /:year-:month-:day-:title.html
 
-paginate: 10
-paginate_path: "page/:num"
-baseurl: ""
+favicon: /assets/image/favicon.ico
 
-
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      styles : [highlight.css,gitment.css,post.css]
-      scripts : [gitment.js, post.js]
-
+# 博客作者相关
+author:
+  name: Zhifan Ren
+  email: zhifan1005@163.com
+  link: http://renzhifan.github.io/
+  weibo:
+  weibo_username:
+  github: https://github.com/renzhifan
+  github_username: renzhifan
 
 
-title: "renzhifan"
-email: zhifan6797@163.com
-description: ""
-github:
-  username: renzhifan
-swiftype:
-  searchId: gbzyqe9r9YEcyzmzNHoF
-gitment:
-  enable: true
-  repo: blog
-  client_id: f3dd18c7c10242a9c275
-  client_secret: 654fc9ad99218ceab536470dd466354ef618c04d
-  lazy: true
+locals:
+  tags: 标签
+  about: 关于
+  active: 技术
+subscribe_rss: /pages/atom.xml
 
-url: "https://renzhifan.github.io"
-imgrepo: "https://renzhifan.github.io/static/img"
+# 头像
+avatar: /assets/image/avatar.png
+# 网站CSS路径
+css: /assets/css/
+# 网站JS路径
+js: /assets/js/
+# 网站图片路径
+image: /assets/image/
 
-
-#url: "http://127.0.0.1:4000"
-#imgrepo: "http://127.0.0.1:4000/static/img"
-
-
-#theme: jekyll-theme-cayman
+# disqus 设置
+disqus:
+  shortname:
