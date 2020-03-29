@@ -17,6 +17,13 @@
     </url>
     
     <url>
+        <loc>http://localhost:4000/2020-01-27-https%E5%8D%8F%E8%AE%AE.html</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <lastmod>2020-01-27 00:00:00 +0800</lastmod>
+    </url>
+    
+    <url>
         <loc>http://localhost:4000/2020-01-26-HTTP%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3.html</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
