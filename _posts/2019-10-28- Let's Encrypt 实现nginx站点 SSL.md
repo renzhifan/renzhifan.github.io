@@ -2,7 +2,7 @@
 layout: post
 title:  Let's Encrypt 实现nginx站点 SSL
 tags: SSL
-categories: nginx
+categories: Server
 published: true
 ---
 

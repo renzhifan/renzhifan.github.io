@@ -2,7 +2,7 @@
 layout: post
 title:  基于 Swoole 在 Laravel 中实现异步任务队列
 tags: swoole laravel 
-categories: swoole
+categories: Swoole
 published: true
 ---
 

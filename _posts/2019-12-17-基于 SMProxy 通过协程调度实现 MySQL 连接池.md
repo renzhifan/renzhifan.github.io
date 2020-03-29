@@ -2,7 +2,7 @@
 layout: post
 title:  基于 MySQL 协议，Swoole 开发的MySQL数据库连接池使用教程。
 tags: SMProxy mysql 
-categories: mysql
+categories: Mysql
 published: true
 ---
 

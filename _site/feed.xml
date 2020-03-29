@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 17:49:39 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 17:49:39 +0800</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 19:35:38 +0800</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 19:35:38 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -284,7 +284,7 @@ Configuration file saved. Run laravel-echo-server start to run server.
         <category>广播</category>
         
         
-        <category>laravel</category>
+        <category>Laravel</category>
         
       </item>
     
@@ -350,7 +350,7 @@ Configuration file saved. Run laravel-echo-server start to run server.
         <category>C/S</category>
         
         
-        <category>网络协议</category>
+        <category>Network</category>
         
       </item>
     
@@ -502,7 +502,7 @@ Configuration file saved. Run laravel-echo-server start to run server.
         <category>https</category>
         
         
-        <category>网络协议</category>
+        <category>Network</category>
         
       </item>
     
@@ -873,7 +873,7 @@ Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(te
         <category>http</category>
         
         
-        <category>网络协议</category>
+        <category>Network</category>
         
       </item>
     
@@ -1034,7 +1034,7 @@ function wxConfig(_timestamp, _nonceStr, _signature,_appId) {
         <category>扫一扫</category>
         
         
-        <category>Tool</category>
+        <category>WeChat</category>
         
       </item>
     
@@ -1423,7 +1423,7 @@ Continue with installation? &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;y/N]y
         <category>ik-analyzer</category>
         
         
-        <category>Tool</category>
+        <category>Server</category>
         
       </item>
     
@@ -2346,7 +2346,7 @@ service mysql restart
         <category>mysql</category>
         
         
-        <category>lnmp</category>
+        <category>Server</category>
         
       </item>
     
@@ -2398,7 +2398,7 @@ service mysql restart
         <category>git</category>
         
         
-        <category>git</category>
+        <category>Git</category>
         
       </item>
     
@@ -2616,7 +2616,7 @@ Process :  26 total,  24 sleep,  2 query
         <category>mysql</category>
         
         
-        <category>mysql</category>
+        <category>Mysql</category>
         
       </item>
     

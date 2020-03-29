@@ -2,7 +2,7 @@
 layout: post
 title:  在 Laravel 中集成 Swoole 实现 WebSocket 服务器
 tags: swoole laravel websocket
-categories: swoole
+categories: Swoole
 published: true
 ---
 

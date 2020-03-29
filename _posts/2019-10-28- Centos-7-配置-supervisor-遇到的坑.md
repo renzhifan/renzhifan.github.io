@@ -2,7 +2,7 @@
 layout: post
 title:  Centos-7-配置-supervisor-遇到的坑
 tags: supervisor
-categories: Tool
+categories: Server
 published: true
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  ubuntu 安装 elasticsearch和ik-analyzer中文分词
 tags: ubuntu elasticsearch ik-analyzer
-categories: Tool
+categories: Server
 published: true
 ---
 

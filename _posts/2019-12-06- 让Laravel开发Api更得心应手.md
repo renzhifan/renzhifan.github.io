@@ -2,7 +2,7 @@
 layout: post
 title:  让Laravel开发Api更得心应手
 tags: api jwt horizon
-categories: laravel
+categories: Laravel
 published: true
 ---
 

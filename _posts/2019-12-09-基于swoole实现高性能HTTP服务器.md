@@ -2,7 +2,7 @@
 layout: post
 title:  基于swoole实现HTTP高性能服务器
 tags: swoole HTTP supervisor
-categories: swoole
+categories: Swoole
 published: true
 ---
 
