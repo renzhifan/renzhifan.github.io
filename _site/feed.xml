@@ -5,12 +5,12 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Mar 2020 09:52:09 +0800</pubDate>
-    <lastBuildDate>Sun, 29 Mar 2020 09:52:09 +0800</lastBuildDate>
+    <pubDate>Sun, 29 Mar 2020 14:40:05 +0800</pubDate>
+    <lastBuildDate>Sun, 29 Mar 2020 14:40:05 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>laravel7.0广播机制(Redis + socket.io)-学习实例</title>
+        <title>laravel7.0广播机制(Redis + socket.io)</title>
         <description>&lt;ul id=&quot;markdown-toc&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;#广播服务提供者&quot; id=&quot;markdown-toc-广播服务提供者&quot;&gt;广播服务提供者&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#设置-redis-连接&quot; id=&quot;markdown-toc-设置-redis-连接&quot;&gt;设置 Redis 连接&lt;/a&gt;&lt;/li&gt;
