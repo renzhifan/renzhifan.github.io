@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>查询进阶 | wu是小任</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="技术博客">
+    <meta name="keywords" content="php,go,mysql,git,linux,Ubuntu,supervisor,redis,elasticsearch,mac,homebrew,node,phpstorm,vscode,nginx,http,laravel,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.5c0233a9.css" as="style"><link rel="preload" href="/assets/js/app.1e589c65.js" as="script"><link rel="preload" href="/assets/js/2.88f1b11e.js" as="script"><link rel="preload" href="/assets/js/180.96eecf5a.js" as="script"><link rel="prefetch" href="/assets/js/10.841cad22.js"><link rel="prefetch" href="/assets/js/100.51998793.js"><link rel="prefetch" href="/assets/js/101.6c468945.js"><link rel="prefetch" href="/assets/js/102.b0d49473.js"><link rel="prefetch" href="/assets/js/103.05368587.js"><link rel="prefetch" href="/assets/js/104.db06069a.js"><link rel="prefetch" href="/assets/js/105.d71aebe6.js"><link rel="prefetch" href="/assets/js/106.3dd77c43.js"><link rel="prefetch" href="/assets/js/107.c9352dba.js"><link rel="prefetch" href="/assets/js/108.60fc1978.js"><link rel="prefetch" href="/assets/js/109.b50945eb.js"><link rel="prefetch" href="/assets/js/11.26be53ce.js"><link rel="prefetch" href="/assets/js/110.da8531d4.js"><link rel="prefetch" href="/assets/js/111.6553bf3b.js"><link rel="prefetch" href="/assets/js/112.31c4b613.js"><link rel="prefetch" href="/assets/js/113.372a4397.js"><link rel="prefetch" href="/assets/js/114.429de267.js"><link rel="prefetch" href="/assets/js/115.f06e0838.js"><link rel="prefetch" href="/assets/js/116.d7f045c3.js"><link rel="prefetch" href="/assets/js/117.eec0c9b1.js"><link rel="prefetch" href="/assets/js/118.9dfe8cde.js"><link rel="prefetch" href="/assets/js/119.0c702c0e.js"><link rel="prefetch" href="/assets/js/12.dd4998f7.js"><link rel="prefetch" href="/assets/js/120.9eb0dcae.js"><link rel="prefetch" href="/assets/js/121.7c6a9bf6.js"><link rel="prefetch" href="/assets/js/122.94f961a3.js"><link rel="prefetch" href="/assets/js/123.a1f3dd6f.js"><link rel="prefetch" href="/assets/js/124.22b8f492.js"><link rel="prefetch" href="/assets/js/125.740f30c6.js"><link rel="prefetch" href="/assets/js/126.955d1117.js"><link rel="prefetch" href="/assets/js/127.42127d56.js"><link rel="prefetch" href="/assets/js/128.9bc0e471.js"><link rel="prefetch" href="/assets/js/129.846d556c.js"><link rel="prefetch" href="/assets/js/13.468b5a9e.js"><link rel="prefetch" href="/assets/js/130.c8141363.js"><link rel="prefetch" href="/assets/js/131.05d9d829.js"><link rel="prefetch" href="/assets/js/132.bd94d255.js"><link rel="prefetch" href="/assets/js/133.94d50492.js"><link rel="prefetch" href="/assets/js/134.f982ce4d.js"><link rel="prefetch" href="/assets/js/135.e0c5e23f.js"><link rel="prefetch" href="/assets/js/136.4218c448.js"><link rel="prefetch" href="/assets/js/137.034f160d.js"><link rel="prefetch" href="/assets/js/138.5d22193b.js"><link rel="prefetch" href="/assets/js/139.e9766435.js"><link rel="prefetch" href="/assets/js/14.b843bca5.js"><link rel="prefetch" href="/assets/js/140.5e8af980.js"><link rel="prefetch" href="/assets/js/141.8289f718.js"><link rel="prefetch" href="/assets/js/142.61b0d99b.js"><link rel="prefetch" href="/assets/js/143.394fddeb.js"><link rel="prefetch" href="/assets/js/144.6199ee12.js"><link rel="prefetch" href="/assets/js/145.db0769aa.js"><link rel="prefetch" href="/assets/js/146.a11e3954.js"><link rel="prefetch" href="/assets/js/147.50342bd3.js"><link rel="prefetch" href="/assets/js/148.c1930835.js"><link rel="prefetch" href="/assets/js/149.ad1dc3fc.js"><link rel="prefetch" href="/assets/js/15.82642fdc.js"><link rel="prefetch" href="/assets/js/150.13980057.js"><link rel="prefetch" href="/assets/js/151.dff707b3.js"><link rel="prefetch" href="/assets/js/152.755f33bb.js"><link rel="prefetch" href="/assets/js/153.f6b4e4a0.js"><link rel="prefetch" href="/assets/js/154.3d7d5f06.js"><link rel="prefetch" href="/assets/js/155.28895750.js"><link rel="prefetch" href="/assets/js/156.0e3eac12.js"><link rel="prefetch" href="/assets/js/157.eb3f6943.js"><link rel="prefetch" href="/assets/js/158.b2b76246.js"><link rel="prefetch" href="/assets/js/159.54505091.js"><link rel="prefetch" href="/assets/js/16.f6ad1ace.js"><link rel="prefetch" href="/assets/js/160.75ced8cd.js"><link rel="prefetch" href="/assets/js/161.a8c1181b.js"><link rel="prefetch" href="/assets/js/162.f4fbcb4e.js"><link rel="prefetch" href="/assets/js/163.e8f4bc4b.js"><link rel="prefetch" href="/assets/js/164.72ae826e.js"><link rel="prefetch" href="/assets/js/165.8439fde1.js"><link rel="prefetch" href="/assets/js/166.523232cb.js"><link rel="prefetch" href="/assets/js/167.182219f1.js"><link rel="prefetch" href="/assets/js/168.bfe88da4.js"><link rel="prefetch" href="/assets/js/169.a9487546.js"><link rel="prefetch" href="/assets/js/17.6b47855d.js"><link rel="prefetch" href="/assets/js/170.c2dbc708.js"><link rel="prefetch" href="/assets/js/171.f6c66625.js"><link rel="prefetch" href="/assets/js/172.3cb1c6b6.js"><link rel="prefetch" href="/assets/js/173.a57d52bb.js"><link rel="prefetch" href="/assets/js/174.64636356.js"><link rel="prefetch" href="/assets/js/175.3e7b17c7.js"><link rel="prefetch" href="/assets/js/176.f110f9dd.js"><link rel="prefetch" href="/assets/js/177.a5d9767f.js"><link rel="prefetch" href="/assets/js/178.b828eabf.js"><link rel="prefetch" href="/assets/js/179.8fb8795a.js"><link rel="prefetch" href="/assets/js/18.c793116a.js"><link rel="prefetch" href="/assets/js/181.c5ef8573.js"><link rel="prefetch" href="/assets/js/182.3f0a3288.js"><link rel="prefetch" href="/assets/js/183.abde4e85.js"><link rel="prefetch" href="/assets/js/184.9db78423.js"><link rel="prefetch" href="/assets/js/185.aeb0dd26.js"><link rel="prefetch" href="/assets/js/186.35b33622.js"><link rel="prefetch" href="/assets/js/187.c61feca1.js"><link rel="prefetch" href="/assets/js/188.100593bc.js"><link rel="prefetch" href="/assets/js/189.39102e19.js"><link rel="prefetch" href="/assets/js/19.ff3ee999.js"><link rel="prefetch" href="/assets/js/190.0de8ae5e.js"><link rel="prefetch" href="/assets/js/191.75a6b8be.js"><link rel="prefetch" href="/assets/js/192.fb8d4293.js"><link rel="prefetch" href="/assets/js/193.f9d0383e.js"><link rel="prefetch" href="/assets/js/194.6264be7d.js"><link rel="prefetch" href="/assets/js/195.9a5824c7.js"><link rel="prefetch" href="/assets/js/196.a47986aa.js"><link rel="prefetch" href="/assets/js/197.3b2af781.js"><link rel="prefetch" href="/assets/js/198.ea524bd0.js"><link rel="prefetch" href="/assets/js/199.1b4e2763.js"><link rel="prefetch" href="/assets/js/20.acd8958e.js"><link rel="prefetch" href="/assets/js/200.a98d2090.js"><link rel="prefetch" href="/assets/js/201.056e1893.js"><link rel="prefetch" href="/assets/js/202.983695b3.js"><link rel="prefetch" href="/assets/js/203.1754bdaf.js"><link rel="prefetch" href="/assets/js/204.d72180b6.js"><link rel="prefetch" href="/assets/js/205.aa1619ca.js"><link rel="prefetch" href="/assets/js/206.d7670d45.js"><link rel="prefetch" href="/assets/js/207.b91c6424.js"><link rel="prefetch" href="/assets/js/208.8949b155.js"><link rel="prefetch" href="/assets/js/209.995f01a0.js"><link rel="prefetch" href="/assets/js/21.45b8c721.js"><link rel="prefetch" href="/assets/js/210.8b1f7b0f.js"><link rel="prefetch" href="/assets/js/211.eeff13d8.js"><link rel="prefetch" href="/assets/js/212.15009f62.js"><link rel="prefetch" href="/assets/js/213.7a1c1403.js"><link rel="prefetch" href="/assets/js/214.c4854ed6.js"><link rel="prefetch" href="/assets/js/215.821d1a35.js"><link rel="prefetch" href="/assets/js/216.79a8cecb.js"><link rel="prefetch" href="/assets/js/217.2fdb4822.js"><link rel="prefetch" href="/assets/js/218.5fbb557d.js"><link rel="prefetch" href="/assets/js/219.f0ea7c75.js"><link rel="prefetch" href="/assets/js/22.bd91939f.js"><link rel="prefetch" href="/assets/js/220.42b47c5f.js"><link rel="prefetch" href="/assets/js/221.cf7b95fc.js"><link rel="prefetch" href="/assets/js/222.55faee81.js"><link rel="prefetch" href="/assets/js/223.92129ca8.js"><link rel="prefetch" href="/assets/js/224.f93b31b5.js"><link rel="prefetch" href="/assets/js/225.40289022.js"><link rel="prefetch" href="/assets/js/226.91eabc11.js"><link rel="prefetch" href="/assets/js/227.2637ffec.js"><link rel="prefetch" href="/assets/js/228.b4030713.js"><link rel="prefetch" href="/assets/js/229.b217f170.js"><link rel="prefetch" href="/assets/js/23.d23edfdb.js"><link rel="prefetch" href="/assets/js/230.774b2cf7.js"><link rel="prefetch" href="/assets/js/231.9cfabadb.js"><link rel="prefetch" href="/assets/js/232.0dfd9098.js"><link rel="prefetch" href="/assets/js/233.89ec9430.js"><link rel="prefetch" href="/assets/js/234.6d3aa860.js"><link rel="prefetch" href="/assets/js/235.0125efb9.js"><link rel="prefetch" href="/assets/js/236.dc3eedd0.js"><link rel="prefetch" href="/assets/js/237.1f585a8f.js"><link rel="prefetch" href="/assets/js/238.0c2ccc12.js"><link rel="prefetch" href="/assets/js/239.fe90d092.js"><link rel="prefetch" href="/assets/js/24.49b37ec7.js"><link rel="prefetch" href="/assets/js/240.1a140685.js"><link rel="prefetch" href="/assets/js/241.7bda5546.js"><link rel="prefetch" href="/assets/js/242.1e1eb5a0.js"><link rel="prefetch" href="/assets/js/243.a087d701.js"><link rel="prefetch" href="/assets/js/25.b777b097.js"><link rel="prefetch" href="/assets/js/26.b6917a39.js"><link rel="prefetch" href="/assets/js/27.3f5d3fbe.js"><link rel="prefetch" href="/assets/js/28.b57d2950.js"><link rel="prefetch" href="/assets/js/29.b9ce0913.js"><link rel="prefetch" href="/assets/js/3.11af9f74.js"><link rel="prefetch" href="/assets/js/30.b8f127af.js"><link rel="prefetch" href="/assets/js/31.fb86cd7c.js"><link rel="prefetch" href="/assets/js/32.cfcbef90.js"><link rel="prefetch" href="/assets/js/33.02538437.js"><link rel="prefetch" href="/assets/js/34.84b90d39.js"><link rel="prefetch" href="/assets/js/35.7d787ffc.js"><link rel="prefetch" href="/assets/js/36.479a70ae.js"><link rel="prefetch" href="/assets/js/37.100d6271.js"><link rel="prefetch" href="/assets/js/38.8dc3e394.js"><link rel="prefetch" href="/assets/js/39.22a52480.js"><link rel="prefetch" href="/assets/js/4.7ceac8be.js"><link rel="prefetch" href="/assets/js/40.d62d8b57.js"><link rel="prefetch" href="/assets/js/41.7886543c.js"><link rel="prefetch" href="/assets/js/42.2cbee609.js"><link rel="prefetch" href="/assets/js/43.9d932b93.js"><link rel="prefetch" href="/assets/js/44.c7b3b09d.js"><link rel="prefetch" href="/assets/js/45.c7158bb0.js"><link rel="prefetch" href="/assets/js/46.e4b553b3.js"><link rel="prefetch" href="/assets/js/47.d012cbe5.js"><link rel="prefetch" href="/assets/js/48.22181e25.js"><link rel="prefetch" href="/assets/js/49.ec206af2.js"><link rel="prefetch" href="/assets/js/5.3b91bdc7.js"><link rel="prefetch" href="/assets/js/50.3c8f6854.js"><link rel="prefetch" href="/assets/js/51.52eefae6.js"><link rel="prefetch" href="/assets/js/52.264461fa.js"><link rel="prefetch" href="/assets/js/53.252a1bf8.js"><link rel="prefetch" href="/assets/js/54.8bc6278e.js"><link rel="prefetch" href="/assets/js/55.89b8032a.js"><link rel="prefetch" href="/assets/js/56.5f32fbd2.js"><link rel="prefetch" href="/assets/js/57.f79d3ea0.js"><link rel="prefetch" href="/assets/js/58.ff002095.js"><link rel="prefetch" href="/assets/js/59.ccabf3c0.js"><link rel="prefetch" href="/assets/js/6.97d7c801.js"><link rel="prefetch" href="/assets/js/60.63af8d58.js"><link rel="prefetch" href="/assets/js/61.bd86bfe3.js"><link rel="prefetch" href="/assets/js/62.1ccff20f.js"><link rel="prefetch" href="/assets/js/63.fec347bd.js"><link rel="prefetch" href="/assets/js/64.59938043.js"><link rel="prefetch" href="/assets/js/65.80a201ed.js"><link rel="prefetch" href="/assets/js/66.060cb376.js"><link rel="prefetch" href="/assets/js/67.e7cdf133.js"><link rel="prefetch" href="/assets/js/68.b276c430.js"><link rel="prefetch" href="/assets/js/69.2a781f0d.js"><link rel="prefetch" href="/assets/js/7.69762135.js"><link rel="prefetch" href="/assets/js/70.46fadeba.js"><link rel="prefetch" href="/assets/js/71.c90f362e.js"><link rel="prefetch" href="/assets/js/72.948db37a.js"><link rel="prefetch" href="/assets/js/73.644348d1.js"><link rel="prefetch" href="/assets/js/74.8a2b234f.js"><link rel="prefetch" href="/assets/js/75.58e17415.js"><link rel="prefetch" href="/assets/js/76.8b22b279.js"><link rel="prefetch" href="/assets/js/77.e6faf941.js"><link rel="prefetch" href="/assets/js/78.ccc9f064.js"><link rel="prefetch" href="/assets/js/79.d6d322ef.js"><link rel="prefetch" href="/assets/js/8.b2c29ddc.js"><link rel="prefetch" href="/assets/js/80.40ab210a.js"><link rel="prefetch" href="/assets/js/81.a8faa74e.js"><link rel="prefetch" href="/assets/js/82.0137fd70.js"><link rel="prefetch" href="/assets/js/83.59167c32.js"><link rel="prefetch" href="/assets/js/84.27dd00eb.js"><link rel="prefetch" href="/assets/js/85.2278b5f0.js"><link rel="prefetch" href="/assets/js/86.b64a0ffe.js"><link rel="prefetch" href="/assets/js/87.0b55b1ed.js"><link rel="prefetch" href="/assets/js/88.b276ef0f.js"><link rel="prefetch" href="/assets/js/89.235a3fc0.js"><link rel="prefetch" href="/assets/js/9.f9068b0b.js"><link rel="prefetch" href="/assets/js/90.5cfa4b5d.js"><link rel="prefetch" href="/assets/js/91.10af5a2f.js"><link rel="prefetch" href="/assets/js/92.1c59b283.js"><link rel="prefetch" href="/assets/js/93.c56553a2.js"><link rel="prefetch" href="/assets/js/94.c8cf7705.js"><link rel="prefetch" href="/assets/js/95.daff829b.js"><link rel="prefetch" href="/assets/js/96.62580526.js"><link rel="prefetch" href="/assets/js/97.317bc21b.js"><link rel="prefetch" href="/assets/js/98.abfaa9df.js"><link rel="prefetch" href="/assets/js/99.b7fd50d8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5c0233a9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu theme-mode-light"><header class="navbar"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/avater.jpeg" alt="wu是小任" class="logo"> <span class="site-name can-hide">wu是小任</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/notes/" class="nav-link">笔记</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/php/" class="nav-link">PHP</a></div><div class="nav-item"><a href="/go/" class="nav-link">GO</a></div><div class="nav-item"><a href="/mysql/" class="nav-link">MYSQL</a></div><div class="nav-item"><a href="/redis/" class="nav-link">Redis</a></div><div class="nav-item"><a href="/elasticsearch/" class="nav-link">Elasticsearch</a></div><div class="nav-item"><a href="/rabbitmq/" class="nav-link">Rabbitmq</a></div><div class="nav-item"><a href="/mac/" class="nav-link">Mac</a></div><div class="nav-item"><a href="/favorites/" class="nav-link">收藏</a></div><div class="nav-item"><a href="/timeline/" class="nav-link">时间轴</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="/img/avater.jpeg"> <div class="blogger-info"><h3>wu是小任</h3> <div class="icons"><a href="mailto:zhifan1005@163.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/renzhifan" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="/notes/" class="nav-link">笔记</a></div><div class="nav-item"><a href="/technology/" class="nav-link">技术</a></div><div class="nav-item"><a href="/php/" class="nav-link">PHP</a></div><div class="nav-item"><a href="/go/" class="nav-link">GO</a></div><div class="nav-item"><a href="/mysql/" class="nav-link">MYSQL</a></div><div class="nav-item"><a href="/redis/" class="nav-link">Redis</a></div><div class="nav-item"><a href="/elasticsearch/" class="nav-link">Elasticsearch</a></div><div class="nav-item"><a href="/rabbitmq/" class="nav-link">Rabbitmq</a></div><div class="nav-item"><a href="/mac/" class="nav-link">Mac</a></div><div class="nav-item"><a href="/favorites/" class="nav-link">收藏</a></div><div class="nav-item"><a href="/timeline/" class="nav-link">时间轴</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>elasticsearch教程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/e655a410ff21cd07/" class="sidebar-link">安装</a></li><li><a href="/pages/2af444818f5230c8/" class="sidebar-link">核心概念</a></li><li><a href="/pages/d135507d7e5df309/" class="sidebar-link">索引&amp;映射</a></li><li><a href="/pages/ce8defeddfad513a/" class="sidebar-link">文档CURD</a></li><li><a href="/pages/70dab84cfe59fdc1/" class="sidebar-link">查询入门</a></li><li><a href="/pages/54eba9074ad827ab/" aria-current="page" class="active sidebar-link">查询进阶</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#创建索引" class="sidebar-link">创建索引</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#接下来定义商品字段" class="sidebar-link">接下来定义商品字段：</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#填充数据" class="sidebar-link">填充数据</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_1-布尔与词项查询" class="sidebar-link">1. 布尔与词项查询</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_2-分页查询" class="sidebar-link">2. 分页查询</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_3-排序" class="sidebar-link">3. 排序</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_4-多字段匹配查询" class="sidebar-link">4. 多字段匹配查询</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_5-多字段匹配查询支持-nested-对象" class="sidebar-link">5. 多字段匹配查询支持 Nested 对象</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_6-text-和-keyword" class="sidebar-link">6.text 和 keyword</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_7-object-和-nested" class="sidebar-link">7.object 和 nested</a></li><li class="sidebar-sub-header"><a href="/pages/54eba9074ad827ab/#_8-地理坐标点geo-point" class="sidebar-link">8.地理坐标点geo-point</a></li></ul></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>php elasticsearch 教程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/81cfc23a32727af6/" class="sidebar-link">在 Laravel 中使用 Elasticsearch</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>golang elasticsearch入门教程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/414e0735cd7e99fc/" class="sidebar-link">Go无法连接docker中es</a></li><li><a href="/pages/73d7a0a011293e62/" class="sidebar-link">go-elastic快速入门</a></li><li><a href="/pages/1969d6083be65573/" class="sidebar-link">go-elastic连接配置</a></li><li><a href="/pages/c14cdb968aa72141/" class="sidebar-link">go-elastic文档操作</a></li><li><a href="/pages/ee40412e4274846f/" class="sidebar-link">go-elastic查询语法</a></li></ul></section></li></ul> </aside> <div><main class="page"> <div class="theme-vdoing-wrapper"><div class="articleInfo-wrap" data-v-17b32fa0><div class="articleInfo" data-v-17b32fa0><ul class="breadcrumbs" data-v-17b32fa0><li data-v-17b32fa0><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-17b32fa0></a></li> <li data-v-17b32fa0><a href="/elasticsearch" title="Elasticsearch-目录页" data-v-17b32fa0>Elasticsearch</a></li> <li data-v-17b32fa0><span data-v-17b32fa0>elasticsearch教程</span></li></ul> <div class="info" data-v-17b32fa0><div class="author iconfont icon-touxiang" data-v-17b32fa0><a href="javascript:;" title="作者" data-v-17b32fa0>wu是小任</a></div> <div class="date iconfont icon-riqi" data-v-17b32fa0><a href="javascript:;" title="创建时间" data-v-17b32fa0>2021-02-26</a></div></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-padding"><div class="right-menu-content"></div></div></div> <div class="theme-vdoing-content content__default"><h2 id="创建索引"><a href="#创建索引" class="header-anchor">#</a> 创建索引</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -XPUT http://localhost:9200/goods?pretty
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h2 id="接下来定义商品字段"><a href="#接下来定义商品字段" class="header-anchor">#</a> 接下来定义商品字段：</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -H<span class="token string">'Content-Type: application/json'</span> -XPUT http://localhost:9200/goods/_mapping/?pretty -d<span class="token string">'{
+  &quot;properties&quot;: {
+    &quot;type&quot;: { &quot;type&quot;: &quot;keyword&quot; } ,
+    &quot;title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; }, 
+    &quot;long_title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; }, 
+    &quot;description&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; },
+    &quot;price&quot;: { &quot;type&quot;: &quot;scaled_float&quot;, &quot;scaling_factor&quot;: 100 },
+    &quot;on_sale&quot;: { &quot;type&quot;: &quot;boolean&quot; },
+    &quot;review_count&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;skus&quot;: {
+      &quot;type&quot;: &quot;nested&quot;,
+      &quot;properties&quot;: {
+        &quot;title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; }, 
+        &quot;description&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; },
+        &quot;price&quot;: { &quot;type&quot;: &quot;scaled_float&quot;, &quot;scaling_factor&quot;: 100 }
+      }
+    },
+    &quot;properties&quot;: {
+      &quot;type&quot;: &quot;nested&quot;,
+      &quot;properties&quot;: {
+        &quot;name&quot;: { &quot;type&quot;: &quot;keyword&quot; }, 
+        &quot;value&quot;: { &quot;type&quot;: &quot;keyword&quot; }
+      }
+    }
+  }
+}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p><code>&quot;analyzer&quot;: &quot;ik_smart&quot;</code> 代表这个字段需要使用 IK 中文分词器分词。</p> <p>还有有一些字段的类型是 <code>keyword</code>，这是字符串类型的一种，这种类型是告诉 Elasticsearch 不需要对这个字段做分词，通常用于<code>邮箱、标签、属性</code>等字段。</p> <p><code>scaled_float</code> 代表一个小数位固定的浮点型字段，与 Mysql 的 <code>decimal</code> 类型类似，后面的 <code>scaling_factor</code> 用来指定小数位精度，<code>100</code> 就代表精确到小数点后两位。</p> <p><code>skus</code> 和 <code>properties</code> 的字段类型是 <code>nested</code>，代表这个字段是一个复杂对象，由下一级的 properties 字段定义这个对象的字段。
+有人可能会问，我们的<code>『商品 SKU』</code>和<code>『商品属性』</code>明明是对象数组，为什么这里可以定义成对象？
+这是 Elasticsearch 的另外一个特性，每个字段都可以保存多个值，这也是 Elasticsearch 的类型没有数组的原因，因为不需要，每个字段都可以是数组</p> <h2 id="填充数据"><a href="#填充数据" class="header-anchor">#</a> 填充数据</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -H<span class="token string">'Content-Type: application/json'</span> -XPUT http://localhost:9200/goods/_doc/1<span class="token punctuation">\</span>?pretty -d<span class="token string">'{
+    &quot;type&quot;: &quot;手机&quot;,
+    &quot;title&quot;: &quot;iPhone 12&quot;,
+    &quot;long_title&quot;: &quot;Apple iPhone 12 (A2404) 128GB 白色 支持移动联通电信5G 双卡双 待手机&quot;,
+    &quot;description&quot;: &quot;以官网信息为准&quot;,
+    &quot;price&quot;: 8848,
+    &quot;on_sale&quot;: true,
+    &quot;review_count&quot;: 211,
+    &quot;skus&quot;: [
+        {
+            &quot;title&quot;: &quot;；白色&quot;,
+            &quot;description&quot;: &quot;白色款&quot;,
+            &quot;price&quot;: &quot;8850&quot;
+        }
+    ]
+
+}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -H<span class="token string">'Content-Type: application/json'</span> -XPUT http://localhost:9200/goods/_doc/2<span class="token punctuation">\</span>?pretty -d<span class="token string">'{
+    &quot;type&quot;: &quot;手机&quot;,
+    &quot;title&quot;: &quot;iPhone 12 pro&quot;,
+    &quot;long_title&quot;: &quot;Apple iPhone 12 Pro Max (A2412) 256GB 海蓝色 支持移动联通电信5G 双卡双待手机&quot;,
+    &quot;description&quot;: &quot;【iPhone的巅峰之作！】推荐选购【值享焕新版】！含2年官方延保AC+，未来购下代iPhone至高返6997元!更多优惠&quot;,
+    &quot;price&quot;: 10099,
+    &quot;on_sale&quot;: true,
+    &quot;review_count&quot;: 9080,
+    &quot;skus&quot;: [
+        {
+            &quot;title&quot;: &quot;；128G&quot;,
+            &quot;description&quot;: &quot;128G存储&quot;,
+            &quot;price&quot;: &quot;9299&quot;
+        },
+      {
+            &quot;title&quot;: &quot;；256G&quot;,
+            &quot;description&quot;: &quot;256G存储&quot;,
+            &quot;price&quot;: &quot;10099&quot;
+        }
+    ]
+
+}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><h2 id="_1-布尔与词项查询"><a href="#_1-布尔与词项查询" class="header-anchor">#</a> 1. 布尔与词项查询</h2> <p>布尔查询与 <code>SQL</code> 语言中的 <code>and</code> / <code>or</code> 有些类似，可以根据多个条件来筛选文档。</p> <p>布尔查询下可以有 <code>filter</code> / <code>must</code> / <code>should</code> / <code>must_not</code> 4 类条件，每个类条件对应的项都是一个数组，数组内每个项对应一个条件。</p> <p>其中 <code>filter</code> 和 <code>must</code> 与 <code>SQL</code> 中的 <code>and</code> 类似，查询的文档必须符合这两类下的条件，只不过 <code>must</code> 下的条件会参与 <code>打分</code> 而 <code>filter</code> 下的条件不会；</p> <p><code>must_not</code> 和 <code>must</code> 相反，查询的文档必须不符合此类下的条件；<code>should</code> 下的条件不需要全部满足，默认情况下只需要满足 <code>should</code> 下的一个条件即可，也可以通过 <code>minimum_should_match</code> 参数来改变需要满足的个数，满足的 <code>should</code> 条件越多，对应的文档的打分就越高，打分高的文档排序会靠前。</p> <p>接下来我们在 kibana 中测试一下</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>在 Elasticsearch 的查询中，每一个条件都是一个 <code>Key-Value</code> 数组，并且这个数组只会有一个 <code>Key</code>，这个 Key 代表了这个条件的查询方式。</p> <p>在上面的例子中我们只有一个条件：<code>['term' =&gt; ['on_sale' =&gt; true]]</code>，这个数组的 <code>Key</code> 是 <code>term</code> 代表这是一个<code>『词项查询』</code>。</p> <p><code>『词项查询』</code>通常用于搜索一个精确的值， <code>Elasticsearch</code> 会拿搜索值在文档对应字段经过分词的结果里精确匹配。我们之前在定义索引数据结构时，<code>on_sale</code> 是一个 Bool 类型，其分词结果就是本身，所以上面这个条件就是查出所有 on_sale 字段是 true 的文档</p> <blockquote><p>注意：每个查询条件都是一个单独的数组，新手很容易把多个条件写在一个关联数组里，这个时候 Elasticsearch 只会取第一个 Key 作为条件。</p></blockquote> <h2 id="_2-分页查询"><a href="#_2-分页查询" class="header-anchor">#</a> 2. 分页查询</h2> <p>Elasticsearch 提供了 <code>from</code> 和 <code>size</code> 两个参数，含义与 <code>SQL</code> 语句的 <code>limit $offset, $count</code> 语法中的 <code>$offset</code> 与 <code>$count</code> 参数完全一致。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>返回结果</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">2</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.0</span>,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;1&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0.0</span>,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;手机&quot;</span>,
+          <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12&quot;</span>,
+          <span class="token string">&quot;long_title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Apple iPhone 12 (A2404) 128GB 白色 支持移动联通电信5G 双卡双待手机&quot;</span>,
+          <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;以官网信息为准&quot;</span>,
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">8848</span>,
+          <span class="token string">&quot;on_sale&quot;</span> <span class="token builtin class-name">:</span> true,
+          <span class="token string">&quot;review_count&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">211</span>,
+          <span class="token string">&quot;skus&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；白色&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;白色款&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;8850&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><h2 id="_3-排序"><a href="#_3-排序" class="header-anchor">#</a> 3. 排序</h2> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;desc&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>,
+  <span class="token string">&quot;_source&quot;</span>:<span class="token punctuation">{</span>
+        <span class="token string">&quot;includes&quot;</span>:<span class="token punctuation">[</span><span class="token string">&quot;price&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><blockquote><p><code>_source</code> 指定返回的字段 其中<code>includes</code>代表需要返回的字段，<code>excludes</code>代表不要返回的字段</p></blockquote> <p>返回结果如下</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">2</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> null,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">10099</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">10099.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;1&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">8848</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">8848.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><h2 id="_4-多字段匹配查询"><a href="#_4-多字段匹配查询" class="header-anchor">#</a> 4. 多字段匹配查询</h2> <blockquote><p>多字段匹配（<code>Multi Match</code>）查询，多字段匹配查询允许我们用一个关键词在多个不同的字段进行匹配，并且可以指定不同字段的匹配权重，权重高的字段有对应的匹配则得分高，最终搜索结果将按照得分降序排列。多字段匹配查询很适合作为电商系统的搜索查询。</p></blockquote> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>,
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;multi_match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12 pro&quot;</span>,
+          <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;title^3&quot;</span>,<span class="token string">&quot;long_title^2&quot;</span>,<span class="token string">&quot;description&quot;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;desc&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>返回结果</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">2</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">2</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> null,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;手机&quot;</span>,
+          <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12 pro&quot;</span>,
+          <span class="token string">&quot;long_title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Apple iPhone 12 Pro Max (A2412) 256GB 海蓝色 支持移动联通电信5G 双卡双待手机&quot;</span>,
+          <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;【iPhone的巅峰之作！】推荐选购【值享焕新版】！含2年官方延保AC+，未来购下代iPhone至高返6997元!更多优惠&quot;</span>,
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">10099</span>,
+          <span class="token string">&quot;on_sale&quot;</span> <span class="token builtin class-name">:</span> true,
+          <span class="token string">&quot;review_count&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">9080</span>,
+          <span class="token string">&quot;skus&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；128G&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;128G存储&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;9299&quot;</span>
+            <span class="token punctuation">}</span>,
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；256G&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;256G存储&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;10099&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">10099.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;1&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;手机&quot;</span>,
+          <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12&quot;</span>,
+          <span class="token string">&quot;long_title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Apple iPhone 12 (A2404) 128GB 白色 支持移动联通电信5G 双卡双待手机&quot;</span>,
+          <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;以官网信息为准&quot;</span>,
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">8848</span>,
+          <span class="token string">&quot;on_sale&quot;</span> <span class="token builtin class-name">:</span> true,
+          <span class="token string">&quot;review_count&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">211</span>,
+          <span class="token string">&quot;skus&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；白色&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;白色款&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;8850&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">8848.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br></div></div><h2 id="_5-多字段匹配查询支持-nested-对象"><a href="#_5-多字段匹配查询支持-nested-对象" class="header-anchor">#</a> 5. 多字段匹配查询支持 Nested 对象</h2> <p>Elasticsearch 的多字段匹配查询是不支持查询 Nested 对象的字段，例如下面这个查询：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>,
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;multi_match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;存储&quot;</span>,
+          <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;skus.title&quot;</span>,<span class="token string">&quot;skus.description&quot;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;desc&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>返回结果</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> null,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span> <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>查询出来的结果是空，但我们又需要支持 SKU 和商品属性的查询，这就需要在定义索引时使用的 copy_to 参数：</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">curl</span> -H<span class="token string">'Content-Type: application/json'</span> -XPUT http://localhost:9200/goods/_mapping?pretty -d<span class="token string">'{
+  &quot;properties&quot;: {
+    &quot;type&quot;: { &quot;type&quot;: &quot;keyword&quot; } ,
+    &quot;title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; }, 
+    &quot;long_title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; }, 
+    &quot;description&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot; },
+    &quot;price&quot;: { &quot;type&quot;: &quot;scaled_float&quot;, &quot;scaling_factor&quot;: 100 },
+    &quot;on_sale&quot;: { &quot;type&quot;: &quot;boolean&quot; },
+    &quot;review_count&quot;: { &quot;type&quot;: &quot;integer&quot; },
+    &quot;skus&quot;: {
+      &quot;type&quot;: &quot;nested&quot;,
+      &quot;properties&quot;: {
+        &quot;title&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot;, &quot;copy_to&quot;: &quot;skus_title&quot; }, 
+        &quot;description&quot;: { &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_smart&quot;, &quot;copy_to&quot;: &quot;skus_description&quot; },
+        &quot;price&quot;: { &quot;type&quot;: &quot;scaled_float&quot;, &quot;scaling_factor&quot;: 100 }
+      }
+    },
+    &quot;properties&quot;: {
+      &quot;type&quot;: &quot;nested&quot;,
+      &quot;properties&quot;: {
+        &quot;name&quot;: { &quot;type&quot;: &quot;keyword&quot; }, 
+        &quot;value&quot;: { &quot;type&quot;: &quot;keyword&quot;, &quot;copy_to&quot;: &quot;properties_value&quot; }
+      }
+    }
+  }
+}'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>注意看 <code>skus.title</code> 字段的定义里加入了 <code>copy_to</code> 参数，
+值是 <code>skus_title</code>，Elasticsearch 就会把这个字段值复制到 <code>skus_title</code> 字段里，
+这样就可以在 <code>multi_match</code> 的 fields 里通过 <em><code>skus_title</code></em> 来匹配。
+<code>skus.description</code> 和 <code>properties.name</code> 同理。
+<code>skus.description</code> 可以在 <code>multi_match</code> 的 fields 里通过 <em><code>skus_description</code></em> 来匹配。</p> <blockquote><p><em>修改之后需要重新同步一下索引即同步一下数据再</em></p></blockquote> <ul><li>测试一</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>,
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;multi_match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;白色&quot;</span>,
+          <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;skus_title&quot;</span>,<span class="token string">&quot;skus_description&quot;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;desc&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>返回数据</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> null,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;1&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;手机&quot;</span>,
+          <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12&quot;</span>,
+          <span class="token string">&quot;long_title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Apple iPhone 12 (A2404) 128GB 白色 支持移动联通电信5G 双卡双 待手机&quot;</span>,
+          <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;以官网信息为准&quot;</span>,
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">8848</span>,
+          <span class="token string">&quot;on_sale&quot;</span> <span class="token builtin class-name">:</span> true,
+          <span class="token string">&quot;review_count&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">211</span>,
+          <span class="token string">&quot;skus&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；白色&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;白色款&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;8850&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">8848.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><ul><li>测试二</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /goods/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;term&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;on_sale&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>,
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;multi_match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;存储&quot;</span>,
+          <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token string">&quot;skus_title&quot;</span>,<span class="token string">&quot;skus_description&quot;</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;from&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span>,
+  <span class="token string">&quot;size&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;price&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;desc&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>返回数据</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;took&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+  <span class="token string">&quot;timed_out&quot;</span> <span class="token builtin class-name">:</span> false,
+  <span class="token string">&quot;_shards&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;successful&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+    <span class="token string">&quot;skipped&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>,
+    <span class="token string">&quot;failed&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">0</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;total&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;value&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">1</span>,
+      <span class="token string">&quot;relation&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;eq&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token string">&quot;max_score&quot;</span> <span class="token builtin class-name">:</span> null,
+    <span class="token string">&quot;hits&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;_index&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;goods&quot;</span>,
+        <span class="token string">&quot;_type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;_doc&quot;</span>,
+        <span class="token string">&quot;_id&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;2&quot;</span>,
+        <span class="token string">&quot;_score&quot;</span> <span class="token builtin class-name">:</span> null,
+        <span class="token string">&quot;_source&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;手机&quot;</span>,
+          <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;iPhone 12 pro&quot;</span>,
+          <span class="token string">&quot;long_title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;Apple iPhone 12 Pro Max (A2412) 256GB 海蓝色 支持移动联通电信5G 双卡双待手机&quot;</span>,
+          <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;【iPhone的巅峰之作！】推荐选购【值享焕新版】！含2年官方延保AC+，未来购下代iPhone至高返6997元!更多优惠&quot;</span>,
+          <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">10099</span>,
+          <span class="token string">&quot;on_sale&quot;</span> <span class="token builtin class-name">:</span> true,
+          <span class="token string">&quot;review_count&quot;</span> <span class="token builtin class-name">:</span> <span class="token number">9080</span>,
+          <span class="token string">&quot;skus&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；128G&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;128G存储&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;9299&quot;</span>
+            <span class="token punctuation">}</span>,
+            <span class="token punctuation">{</span>
+              <span class="token string">&quot;title&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;；256G&quot;</span>,
+              <span class="token string">&quot;description&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;256G存储&quot;</span>,
+              <span class="token string">&quot;price&quot;</span> <span class="token builtin class-name">:</span> <span class="token string">&quot;10099&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;sort&quot;</span> <span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token number">10099.0</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><h2 id="_6-text-和-keyword"><a href="#_6-text-和-keyword" class="header-anchor">#</a> 6.text 和 keyword</h2> <p>text: 文本类型，会对内容进行分词，如果不指定分词则使用默认的standard分词，支持模糊查询
+keyword: 关键字类型，不会对内容进行分词，只能按其精确值搜索。，通常用于过滤、排序和聚合</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>PUT /db
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;mappings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;test&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;keyword&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code>PUT /db/1
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;犯我中华者，虽远必诛&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>因为keyword不分词，所以查不到</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /db/_search 
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;中华&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><ul><li>因为keyword不分词，所以可以精确查询</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /db/_search 
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;犯我中华者，虽远必诛&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="_7-object-和-nested"><a href="#_7-object-和-nested" class="header-anchor">#</a> 7.object 和 nested</h2> <p>object：对象
+nested : 嵌套对象，可以看成是数组类型，object和nested不同之处在于对于数组中的元素是对象的元素的索引方式不同</p> <ul><li>存储一篇博客，同时将博客对应的评论也存储到该博客里面，评论comments是一个数组，数组的每一个元素是一个对象object, 因为没有预先显式的创建索引，所以es会字段自动映射，将comments的类型映射为object</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>PUT /my_index/1
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Nest eggs&quot;</span>,
+  <span class="token string">&quot;body&quot;</span><span class="token builtin class-name">:</span>  <span class="token string">&quot;Making your money work...&quot;</span>,
+  <span class="token string">&quot;tags&quot;</span><span class="token builtin class-name">:</span>  <span class="token punctuation">[</span> <span class="token string">&quot;cash&quot;</span>, <span class="token string">&quot;shares&quot;</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> 
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>    <span class="token string">&quot;John Smith&quot;</span>,
+      <span class="token string">&quot;comment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Great article&quot;</span>,
+      <span class="token string">&quot;age&quot;</span><span class="token builtin class-name">:</span>     <span class="token number">28</span>,
+      <span class="token string">&quot;stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token number">4</span>,
+      <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span>    <span class="token string">&quot;2014-09-01&quot;</span>
+    <span class="token punctuation">}</span>,
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>    <span class="token string">&quot;Alice White&quot;</span>,
+      <span class="token string">&quot;comment&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;More like this please&quot;</span>,
+      <span class="token string">&quot;age&quot;</span><span class="token builtin class-name">:</span>     <span class="token number">31</span>,
+      <span class="token string">&quot;stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token number">5</span>,
+      <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span>    <span class="token string">&quot;2014-10-22&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><ul><li>对于类型为object的对象数组es会被处理成如下的扁平式键值对的结构</li> <li>这种处理方式是将数组中的相同的字段的所有值作为一个数组来作为整个字段的值，如果这样处理的话，就和下面的文档索引方式是一致的，但是这两个文档的数据类型明显是不同的，一个是普通对象，对象中的每个属性的值都是数组；另一个是字段是数组类型(虽然ES中的数据类型是没有数组类型)，数组中的每个元素是一个普通对象，每个对象的字段值都是基本数据类型，非数组类型</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;comments&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+     <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> alice, john, smith, white <span class="token punctuation">]</span>,
+     <span class="token string">&quot;comment&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> article, great, like, more, please, this <span class="token punctuation">]</span>,
+     <span class="token string">&quot;age&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> <span class="token number">28</span>, <span class="token number">31</span> <span class="token punctuation">]</span>,
+     <span class="token string">&quot;stars&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> <span class="token number">4</span>, <span class="token number">5</span> <span class="token punctuation">]</span>,
+     <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> <span class="token number">2014</span>-09-01, <span class="token number">2014</span>-10-22 <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span>            <span class="token punctuation">[</span> eggs, nest <span class="token punctuation">]</span>,
+  <span class="token string">&quot;body&quot;</span><span class="token builtin class-name">:</span>             <span class="token punctuation">[</span> making, money, work, your <span class="token punctuation">]</span>,
+  <span class="token string">&quot;tags&quot;</span><span class="token builtin class-name">:</span>             <span class="token punctuation">[</span> cash, shares <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.name&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> alice, john, smith, white <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.comment&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> article, great, like, more, please, this <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.age&quot;</span><span class="token builtin class-name">:</span>     <span class="token punctuation">[</span> <span class="token number">28</span>, <span class="token number">31</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token punctuation">[</span> <span class="token number">4</span>, <span class="token number">5</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.date&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> <span class="token number">2014</span>-09-01, <span class="token number">2014</span>-10-22 <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><ul><li>该查询类似于 <code>select * from blogpost where comments.name like &quot;%Alice%&quot; and comments.age like &quot;%28%&quot;</code></li> <li>根据es对类型为object的类型的分析，可以看到 comments.name 是一个数组，数组中有个元素是alice，comments.age是一个数组，数组中有一个元素是28，所以两个条件都满足，所以该文档满足查询条件</li> <li>现实结果是该文档满足这两个条件，但是这是我们想要的结果吗？？？我们的意思是像表达，数组中的某一个元素如果满足这两个条件就查询出来，也就是说如果数组中有一个元素同时满足这两个条件，我们看数组中有两个元素，其中 name like '%Alice%' and age like '%28%' 同时满足这个条件的数组元素是没有的，name包含&quot;alice&quot;的那个元素对应的age是31岁，不是28岁，28岁是name为”john smith“的， 所以这并不是我们想要的查询结果</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /my_index/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span> <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> <span class="token string">&quot;comments.name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Alice&quot;</span> <span class="token punctuation">}</span><span class="token punctuation">}</span>,
+        <span class="token punctuation">{</span> <span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> <span class="token string">&quot;comments.age&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">28</span>      <span class="token punctuation">}</span><span class="token punctuation">}</span> 
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>嵌套对象nested对于类型为数组，数组中的元素是普通对象的这样的数据类型的处理是不一样的, 嵌套对象会将数组中的每个对象作为独立的文档，对于数组es会自动映射为object类型，所以要想使用嵌套对象类型就必须手动显式创建索引，明确指定字段的类型为nested</p> <ul><li>先删除索引</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>DELETE /my_index
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><ul><li>重新创建索引,comments的type:nested</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>PUT /my_index
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;mappings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;comments&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;nested&quot;</span>, 
+          <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;string&quot;</span>  <span class="token punctuation">}</span>,
+            <span class="token string">&quot;comment&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;string&quot;</span>  <span class="token punctuation">}</span>,
+            <span class="token string">&quot;age&quot;</span><span class="token builtin class-name">:</span>     <span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;short&quot;</span>   <span class="token punctuation">}</span>,
+            <span class="token string">&quot;stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;short&quot;</span>   <span class="token punctuation">}</span>,
+            <span class="token string">&quot;date&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;date&quot;</span>    <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token comment">#对于type为nested类型，es会对每个数组元素作为一个单独的索引，对于非数组元素作为一个单独索引，这些都属于同一个文档的索引</span>
+<span class="token punctuation">{</span> <span class="token comment"># 第一个嵌套文档</span>
+  <span class="token string">&quot;comments.name&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> john, smith <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.comment&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> article, great <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.age&quot;</span><span class="token builtin class-name">:</span>     <span class="token punctuation">[</span> <span class="token number">28</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token punctuation">[</span> <span class="token number">4</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.date&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> <span class="token number">2014</span>-09-01 <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">{</span> <span class="token comment"># 第二个嵌套文档</span>
+  <span class="token string">&quot;comments.name&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> alice, white <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.comment&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> like, more, please, this <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.age&quot;</span><span class="token builtin class-name">:</span>     <span class="token punctuation">[</span> <span class="token number">31</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.stars&quot;</span><span class="token builtin class-name">:</span>   <span class="token punctuation">[</span> <span class="token number">5</span> <span class="token punctuation">]</span>,
+  <span class="token string">&quot;comments.date&quot;</span><span class="token builtin class-name">:</span>    <span class="token punctuation">[</span> <span class="token number">2014</span>-10-22 <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">{</span> <span class="token comment"># 根文档或者称为父文档</span>
+  <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span>            <span class="token punctuation">[</span> eggs, nest <span class="token punctuation">]</span>,
+  <span class="token string">&quot;body&quot;</span><span class="token builtin class-name">:</span>             <span class="token punctuation">[</span> making, money, work, your <span class="token punctuation">]</span>,
+  <span class="token string">&quot;tags&quot;</span><span class="token builtin class-name">:</span>             <span class="token punctuation">[</span> cash, shares <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><ul><li>对于嵌套类型的查询需要专门使用nested查询</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /my_index/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> <span class="token string">&quot;title&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;eggs&quot;</span><span class="token punctuation">}</span> <span class="token punctuation">}</span>,
+        <span class="token punctuation">{</span><span class="token string">&quot;nested&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;path&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments&quot;</span>,
+          <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;must&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span><span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token string">&quot;comments.name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;john&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span>,
+                <span class="token punctuation">{</span><span class="token string">&quot;match&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span><span class="token string">&quot;comments.age&quot;</span><span class="token builtin class-name">:</span> <span class="token number">28</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+              <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p>注意：</p> <ul><li>must中直接子元素即一级元，即{“match”: { “title”: “eggs”} }是作用在根文档(父文档)上；</li> <li>nested 子句作用于嵌套字段 comments 。在此查询中，既不能查询根文档字段，也不能查询其他嵌套文档。；</li> <li>comments.name 和 comments.age 子句操作在同一个嵌套文档中。</li> <li>nested 字段可以包含其他的 nested 字段。同样地，nested 查询也可以包含其他的 nested 查询。而嵌套的层次会按照你所期待的被应用。</li></ul> <p>嵌套对象排序</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /my_index/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;nested&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;path&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments&quot;</span>,
+      <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;bool&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;filter&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;range&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;comments.date&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;gte&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;2014-10-01&quot;</span>,
+                <span class="token string">&quot;lt&quot;</span><span class="token builtin class-name">:</span>  <span class="token string">&quot;2014-11-01&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;comments.stars&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;asc&quot;</span>,
+        <span class="token string">&quot;mode&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;min&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><ul><li>嵌套文档聚合</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /my_index/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;comments&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;nested&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;path&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;by_month&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;date_histogram&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments.date&quot;</span>,
+            <span class="token string">&quot;interval&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;month&quot;</span>,
+            <span class="token string">&quot;format&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;yyyy-MM&quot;</span>
+          <span class="token punctuation">}</span>,
+          <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;avg_starts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;avg&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments.stars&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>逆向嵌套聚合：</p> <ul><li>nested 聚合 只能对嵌套文档的字段进行操作。</li> <li>根文档或者其他嵌套文档的字段对它是不可见的。</li> <li>然而，通过 reverse_nested 聚合，我们可以 走出 嵌套层级，回到父级文档进行操作。</li> <li>reverse_nested 聚合退回根文档</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /my_index/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;comments&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;nested&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;path&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;age_group&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;histogram&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;comments.age&quot;</span>,
+            <span class="token string">&quot;interval&quot;</span><span class="token builtin class-name">:</span> <span class="token number">10</span>
+          <span class="token punctuation">}</span>,
+          <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+            <span class="token string">&quot;blogposts&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;reverse_nested&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> <span class="token punctuation">}</span>,
+              <span class="token string">&quot;aggs&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                <span class="token string">&quot;tags&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                  <span class="token string">&quot;terms&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+                    <span class="token string">&quot;field&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;tags&quot;</span>
+                  <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>嵌套对象的使用时机
+嵌套对象 在只有一个主要实体时非常有用，这个主要实体包含有限个紧密关联但又不是很重要的实体，例如我们的 blogpost 对象包含评论对象。 在基于评论的内容查找博客文章时， nested 查询有很大的用处，并且可以提供更快的查询效率。</p> <p>嵌套模型的缺点如下：</p> <p>当对嵌套文档做增加、修改或者删除时，整个文档都要重新被索引。嵌套文档越多，这带来的成本就越大。</p> <p>查询结果返回的是整个文档，而不仅仅是匹配的嵌套文档。尽管目前有计划支持只返回根文档中最佳匹配的嵌套文档，但目前还不支持。</p> <p>有时你需要在主文档和其关联实体之间做一个完整的隔离设计。这个隔离是由 父子关联 提供的。</p> <h2 id="_8-地理坐标点geo-point"><a href="#_8-地理坐标点geo-point" class="header-anchor">#</a> 8.地理坐标点geo-point</h2> <p>地理坐标点：是指地球表面可以用经纬度描述的一个点。 地理坐标点可以用来计算两个坐标间的距离，还可以判断一个坐标是否在一个区域中，或在聚合中。</p> <p>地理坐标点不能被动态映射（dynamic mapping）自动检测，而是需要显式声明对应字段类型为geo-point,经纬度信息的形式可以是字符串(“lat,lon”)、数组([lon,lat])、对象({“lat”: xxx, “lon”: xxx})， 注意字符串和数组的经纬度顺序不一致。</p> <p>longitude：经度
+latitude：纬度</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>PUT /attractions
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;mappings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;properties&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;text&quot;</span>
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+          <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;geo_point&quot;</span>,
+          <span class="token string">&quot;lat_lon&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>  // location.lat 和 location.lon 字段将被分别索引。它们可以被用于检索，但是不会在检索结果中返回
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 字符串</span>
+PUT /attractions/1
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>     <span class="token string">&quot;Chipotle Mexican Grill&quot;</span>,
+  <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;40.715, -74.011&quot;</span> 
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 对象</span>
+PUT /attractions/2
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>     <span class="token string">&quot;Pala Pizza&quot;</span>,
+  <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> 
+    <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>     <span class="token number">40.722</span>,
+    <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span>    -73.989
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 数组</span>
+PUT /attractions/3
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span>     <span class="token string">&quot;Mini Munchies Pizza&quot;</span>,
+  <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span> -73.983, <span class="token number">40.719</span> <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>有四种地理坐标点相关的过滤器可以用来选中或者排除文档：</p> <ul><li>geo_bounding_box 找出落在指定矩形框中的点。</li> <li>geo_distance 找出与指定位置在给定距离内的点。</li> <li>geo_distance_range 找出与指定点距离在给定最小距离和最大距离之间的点。</li> <li>geo_polygon 找出落在多边形中的点。 这个过滤器使用代价很大</li></ul> <p>地理坐标过滤器使用代价昂贵 — 所以最好在文档集合尽可能少的场景下使用。你可以先使用那些简单快捷的过滤器，比如 term 或 range ，来过滤掉尽可能多的文档，最后才交给地理坐标过滤器处理。</p> <p>地理坐标盒模型过滤器：这是目前为止最有效的地理坐标过滤器了，因为它计算起来非常简单。 你指定一个矩形的 左上和右下坐标点，然后过滤器只需判断坐标的经度是否在左右边界之间，纬度是否在上下边界之间：</p> <ul><li>这些坐标也可以用 bottom_left 和 top_right 来表示。</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /attractions/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;geo_bounding_box&quot;</span>:<span class="token punctuation">{</span>
+        <span class="token string">&quot;type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;indexed&quot;</span>,
+        <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> 
+            <span class="token string">&quot;top_left&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">40.8</span>,
+              <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span> -74.0
+            <span class="token punctuation">}</span>,
+            <span class="token string">&quot;bottom_right&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+              <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">40.7</span>,
+              <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span> -73.0
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>设置 type 参数为 indexed （替代默认值 memory ）来明确告诉 Elasticsearch 对这个过滤器使用倒排索引。</p> <p>地理距离过滤器:地理距离过滤器（ geo_distance ）以给定位置为圆心画一个圆，来找出那些地理坐标落在其中的文档：</p> <ul><li>找出所有与指定点距离在 1km 内的 location 字段</li></ul> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /attractions/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;geo_distance&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;distance&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;1km&quot;</span>, 
+      <span class="token string">&quot;distance_type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;plane&quot;</span>,
+      <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> 
+        <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">40.715</span>,
+        <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span> -73.988
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>地理距离过滤器计算代价昂贵。为了优化性能，Elasticsearch 先画一个矩形框来围住整个圆形，这样就可以先用消耗较少的盒模型计算方式来排除掉尽可能多的文档。 然后只对落在盒模型内的这部分点用地理距离计算方式处理。你需要判断你的用户，是否需要如此精确的使用圆模型来做距离过滤？通常使用矩形模型 bounding box 是比地理距离更高效的方式，并且往往也能满足应用需求。</p> <p>按距离排序:检索结果可以按与指定点的距离排序：当你可以按距离排序时， 按距离打分通常是一个更好的解决方案</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code>GET /attractions/_search
+<span class="token punctuation">{</span>
+  <span class="token string">&quot;query&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;geo_distance&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;distance&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;1km&quot;</span>, 
+      <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span> 
+        <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">40.715</span>,
+        <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span> -73.988
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">&quot;sort&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;_geo_distance&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;location&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>     <span class="token comment"># 计算每个文档中 location 字段与指定的 lat/lon 点间的距离。</span>
+          <span class="token string">&quot;lat&quot;</span><span class="token builtin class-name">:</span>  <span class="token number">40.715</span>,
+          <span class="token string">&quot;lon&quot;</span><span class="token builtin class-name">:</span> -73.998
+        <span class="token punctuation">}</span>,
+        <span class="token string">&quot;order&quot;</span><span class="token builtin class-name">:</span>         <span class="token string">&quot;asc&quot;</span>,
+        <span class="token string">&quot;unit&quot;</span><span class="token builtin class-name">:</span>          <span class="token string">&quot;km&quot;</span>,    <span class="token comment"># 将距离以 km 为单位写入到每个返回结果的 sort 键中</span>
+        <span class="token string">&quot;distance_type&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;plane&quot;</span>   <span class="token comment"># 使用快速但精度略差的 plane 计算方式</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>更快的地理距离计算，两点间的距离计算，有多种牺牲性能换取精度的算法：</p> <ul><li><p>arc 最慢但最精确的是 arc 计算方式，这种方式把世界当作球体来处理。不过这种方式的精度有限，因为这个世界并不是完全的球体。</p></li> <li><p>plane plane计算方式把地球当成是平坦的，这种方式快一些但是精度略逊。在赤道附近的位置精度最好，而靠近两极则变差。</p></li> <li><p>sloppy_arc 如此命名，是因为它使用了 Lucene 的 SloppyMath 类。这是一种用精度换取速度的计算方式， 它使用 Haversine formula 来计算距离。它比 arc 计算方式快 4 到 5 倍，并且距离精度达 99.9%。这也是默认的计算方式</p></li></ul></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/05/16, 10:05:00</span></div></footer> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/70dab84cfe59fdc1/" data-tooltip="查询入门" class="page-nav-centre page-nav-centre-prev"></a> <a href="/pages/81cfc23a32727af6/" data-tooltip="在 Laravel 中使用 Elasticsearch" class="page-nav-centre page-nav-centre-next"></a> <div class="tooltip" style="display:none;">提高学习效率的策略</div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/70dab84cfe59fdc1/" class="prev">查询入门</a></span> <span class="next"><a href="/pages/81cfc23a32727af6/">在 Laravel 中使用 Elasticsearch</a>
+        →
+      </span></p></div></div> <div class="article"><div class="article-title"><span>最近更新</span></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/8c46832001208a31/"><div>Go 介绍与环境安装</div></a> <span>07-20</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/e51202e312201ba1/"><div>跳转语句</div></a> <span>02-08</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/97928077baa8871a/"><div>循环语句</div></a> <span>02-08</span></dt></dl> <dl><dd></dd> <dt><a href="/timeline/" class="more">更多文章&gt;</a></dt></dl></div></div></div> </main> <div class="footer" data-v-cc413c0c><div class="icons" data-v-cc413c0c><a href="mailto:zhifan1005@163.com" title="发邮件" target="_blank" class="iconfont icon-youjian" data-v-cc413c0c></a><a href="https://github.com/renzhifan" title="GitHub" target="_blank" class="iconfont icon-github" data-v-cc413c0c></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji" data-v-cc413c0c></a></div> <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题" data-v-cc413c0c>♔♕Vdoing | </a>
+    Copyright © 2019-2022
+    <span data-v-cc413c0c>wu是小任</span></div></div> <div class="buttons"><div title="返回顶部" class="button go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div></div><div class="global-ui"><div></div></div></div>
+    <script src="/assets/js/app.1e589c65.js" defer></script><script src="/assets/js/2.88f1b11e.js" defer></script><script src="/assets/js/180.96eecf5a.js" defer></script>
+  </body>
+</html>
